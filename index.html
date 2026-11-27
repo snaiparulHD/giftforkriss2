@@ -843,16 +843,16 @@
 </head>
 <body>
     <!-- AUDIO ETAPA 1 & EXISTENTE -->
-    <audio id="glitchAudio" src="glitch.mp3" loop preload="auto"></audio>
-    <audio id="clickAudio" src="click.mp3" preload="auto"></audio>
-    <audio id="afterHoleAudio" src="after_hole.mp3" preload="auto"></audio>
-    <audio id="tiniVoiceAudio" src="tini_voice.mp3" preload="auto"></audio>
-    <audio id="backstageIntroVoice" src="backstage_intro.mp3" preload="auto"></audio>
-    <audio id="backstageFinalVoice" src="backstage_final.mp3" preload="auto"></audio>
-    <audio id="backstageAmbientMusic" src="backstage_ambient.mp3" loop preload="auto"></audio>
-    <audio id="concertIntroVoice" src="concert_intro_voice.mp3" preload="auto"></audio>
-    <audio id="crowdCheeringAudio" src="crowd_cheering.mp3" preload="auto"></audio>
-    <audio id="concertMusicAudio" preload="auto"></audio>
+    <audio id="glitchAudio" src="glitch.mp3" loop preload="auto" playsinline></audio>
+    <audio id="clickAudio" src="click.mp3" preload="auto" playsinline></audio>
+    <audio id="afterHoleAudio" src="after_hole.mp3" preload="auto" playsinline></audio>
+    <audio id="tiniVoiceAudio" src="tini_voice.mp3" preload="auto" playsinline></audio>
+    <audio id="backstageIntroVoice" src="backstage_intro.mp3" preload="auto" playsinline></audio>
+    <audio id="backstageFinalVoice" src="backstage_final.mp3" preload="auto" playsinline></audio>
+    <audio id="backstageAmbientMusic" src="backstage_ambient.mp3" loop preload="auto" playsinline></audio>
+    <audio id="concertIntroVoice" src="concert_intro_voice.mp3" preload="auto" playsinline></audio>
+    <audio id="crowdCheeringAudio" src="crowd_cheering.mp3" preload="auto" playsinline></audio>
+    <audio id="concertMusicAudio" preload="auto" playsinline></audio>
 
     <div id="blackHoleVortex"></div>
 
@@ -1804,6 +1804,7 @@
 
         /* =========================================================
            ETAPA 5-7: MESAJ EXACT + 5s COUNTDOWN + 3 ACTE CONCERT + FINAL
+           (OPTIMIZAT PENTRU IPHONE SAFARI)
            ========================================================= */
         const CONCERT_ACTS = [
             {
@@ -1844,6 +1845,32 @@
         let countdownTimer = null;
         let concertFallbackTimer = null;
 
+        function unlockConcertAudioForIOS() {
+            ensureAudioContext();
+            const mEl = document.getElementById('concertMusicAudio');
+            mEl.src = CONCERT_ACTS[0].music;
+            mEl.load();
+            mEl.volume = concertVol;
+            mEl.play().then(() => {
+                mEl.pause();
+                mEl.currentTime = 0;
+            }).catch(() => {});
+        }
+
+        function attemptPlayActMusic(mEl) {
+            const playBtn = document.getElementById('togglePlayPauseBtn');
+            const p = mEl.play();
+            if (p && typeof p.then === 'function') {
+                p.then(() => {
+                    isPlayingAct = true;
+                    playBtn.textContent = 'PAUSA';
+                }).catch(() => {
+                    isPlayingAct = false;
+                    playBtn.textContent = 'PORNEȘTE MUZICA';
+                });
+            }
+        }
+
         function openConcertStage(screen = 'unlock') {
             stopAllAudio();
             hideAllStages();
@@ -1861,7 +1888,7 @@
         }
 
         document.getElementById('feYaEstoyListaBtn').onclick = () => {
-            ensureAudioContext();
+            unlockConcertAudioForIOS();
             document.getElementById('feUnlockScreen').classList.add('hidden');
             document.getElementById('feOpeningScreen').classList.remove('hidden');
             startExact5SecondCountdown();
@@ -1898,8 +1925,6 @@
                     setTimeout(() => {
                         document.getElementById('feOpeningScreen').classList.add('hidden');
                         document.getElementById('feConcertScreen').classList.remove('hidden');
-                        isPlayingAct = true;
-                        document.getElementById('togglePlayPauseBtn').textContent = 'PAUSA';
                         loadConcertAct(0);
                     }, 1500);
                 }
@@ -1921,10 +1946,12 @@
             const pEl = document.getElementById('actPhotoFallback');
             pEl.src = act.photo;
             vEl.src = act.video;
-            if (isPlayingAct) vEl.play().catch(() => {});
+            vEl.load();
+            vEl.play().catch(() => {});
 
             const mEl = document.getElementById('concertMusicAudio');
             mEl.src = act.music;
+            mEl.load();
             mEl.volume = concertVol;
             mEl.currentTime = 0;
 
@@ -1936,33 +1963,28 @@
                 }
             };
 
-            if (isPlayingAct) {
-                mEl.play().catch(() => {
-                    concertFallbackTimer = setInterval(() => {
-                        if (isPlayingAct) playTone(act.freq, 0.25, 'triangle', Math.max(0.01, concertVol * 0.04), 0);
-                    }, 600);
-                });
-            }
+            attemptPlayActMusic(mEl);
         }
 
         document.getElementById('togglePlayPauseBtn').onclick = () => {
+            ensureAudioContext();
             const vEl = document.getElementById('actVideo');
             const mEl = document.getElementById('concertMusicAudio');
-            if (isPlayingAct) {
+            if (!mEl.paused && isPlayingAct) {
                 isPlayingAct = false;
                 vEl.pause();
                 mEl.pause();
                 clearInterval(concertFallbackTimer);
                 document.getElementById('togglePlayPauseBtn').textContent = 'REPRODUCIR';
             } else {
-                isPlayingAct = true;
                 vEl.play().catch(() => {});
-                mEl.play().catch(() => {});
-                document.getElementById('togglePlayPauseBtn').textContent = 'PAUSA';
+                mEl.volume = concertVol;
+                attemptPlayActMusic(mEl);
             }
         };
 
         document.getElementById('nextActBtn').onclick = () => {
+            ensureAudioContext();
             if (actIdx < CONCERT_ACTS.length - 1) {
                 loadConcertAct(actIdx + 1);
             } else {
