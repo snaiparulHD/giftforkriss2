@@ -265,6 +265,39 @@
             }
         }
 
+        /* BARĂ FRAGMENTE DEBLOCATE (PERMANENTĂ PÂNĂ LA FINAL) */
+        #fragmentsHud {
+            position: fixed;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 140;
+            background: rgba(10, 10, 22, 0.88);
+            border: 1px solid rgba(0, 240, 255, 0.45);
+            border-radius: 999px;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+            pointer-events: none;
+        }
+
+        .frag-label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #ff85d8;
+        }
+
+        .frag-value {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.82rem;
+            color: #00f0ff;
+            letter-spacing: 0.08em;
+        }
+
         /* APARIȚIA GIF-ULUI DUPĂ GAURA NEAGRĂ */
         #postHoleGifLayer {
             position: fixed;
@@ -327,8 +360,8 @@
 
         .mission-card {
             width: 100%;
-            max-width: 560px;
-            background: rgba(16, 16, 28, 0.85);
+            max-width: 580px;
+            background: rgba(16, 16, 28, 0.88);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 24px;
             padding: 32px 26px;
@@ -423,10 +456,10 @@
 
         .quiz-card {
             width: 100%;
-            max-width: 600px;
+            max-width: 620px;
             max-height: 92vh;
             overflow-y: auto;
-            background: rgba(18, 18, 32, 0.9);
+            background: rgba(18, 18, 32, 0.92);
             border: 1px solid rgba(255, 255, 255, 0.13);
             border-radius: 24px;
             padding: 24px 22px;
@@ -474,9 +507,9 @@
 
         .question-visual {
             width: 100%;
-            height: 170px;
+            height: 150px;
             border-radius: 16px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -486,15 +519,8 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        .question-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
         .visual-badge-anim {
-            font-size: 2.6rem;
+            font-size: 2.4rem;
             animation: floatIcon 2.4s ease-in-out infinite;
             filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.35));
         }
@@ -514,17 +540,17 @@
         }
 
         .question-text {
-            font-size: clamp(1.15rem, 3vw, 1.45rem);
+            font-size: clamp(1.12rem, 3vw, 1.4rem);
             font-weight: 700;
             line-height: 1.38;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             color: #ffffff;
         }
 
         .options-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 11px;
+            gap: 10px;
         }
 
         .option-btn {
@@ -533,13 +559,13 @@
             text-align: left;
             cursor: pointer;
             font-family: 'Jost', sans-serif;
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 600;
             color: #ffffff;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 14px;
-            padding: 14px 16px;
+            padding: 13px 16px;
             transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
         }
 
@@ -576,7 +602,7 @@
         }
 
         .feedback-box {
-            margin-top: 16px;
+            margin-top: 14px;
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -601,38 +627,14 @@
             padding: 10px 18px;
             border-radius: 999px;
             flex-shrink: 0;
-            transition: transform 0.15s ease, opacity 0.2s ease;
         }
 
-        .btn-next:hover {
-            transform: scale(1.04);
-        }
+        .result-box { text-align: center; padding: 12px 6px; }
+        .result-emoji { font-size: 3rem; margin-bottom: 10px; }
+        .result-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+        .result-desc { font-size: 1rem; line-height: 1.5; color: rgba(255, 255, 255, 0.85); margin-bottom: 22px; }
 
-        .result-box {
-            text-align: center;
-            padding: 12px 6px;
-        }
-
-        .result-emoji {
-            font-size: 3.2rem;
-            margin-bottom: 12px;
-            animation: floatIcon 2.2s ease-in-out infinite;
-        }
-
-        .result-title {
-            font-size: 1.65rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .result-desc {
-            font-size: 1.02rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 24px;
-        }
-
-        /* CODUL SECRET 090 PENTRU SCOR 6/6 */
+        /* SECRET CODE SCENE */
         #secretCodeScene {
             position: fixed;
             inset: 0;
@@ -653,50 +655,21 @@
             text-align: center;
             padding: 36px 28px;
             border-radius: 28px;
-            background: rgba(14, 14, 26, 0.9);
+            background: rgba(14, 14, 26, 0.92);
             border: 1px solid rgba(0, 240, 255, 0.35);
-            box-shadow:
-                0 0 50px rgba(0, 240, 255, 0.16),
-                0 25px 70px rgba(0, 0, 0, 0.85);
-            max-width: 440px;
+            box-shadow: 0 0 50px rgba(0, 240, 255, 0.16), 0 25px 70px rgba(0, 0, 0, 0.85);
+            max-width: 460px;
             width: 100%;
         }
 
-        .secret-label {
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
+        .unlocked-fragment-badge {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 2.2rem;
             color: #00f0ff;
-            margin-bottom: 14px;
+            text-shadow: 0 0 24px rgba(0, 240, 255, 0.75);
+            margin: 14px 0 18px;
         }
 
-        .secret-code-digits {
-            font-size: clamp(3.6rem, 14vw, 5.4rem);
-            font-weight: 800;
-            letter-spacing: 0.28em;
-            padding-left: 0.28em;
-            line-height: 1.1;
-            color: #ffffff;
-            text-shadow:
-                0 0 24px rgba(0, 240, 255, 0.75),
-                0 0 48px rgba(255, 0, 85, 0.45);
-            animation: codePulse 2.2s ease-in-out infinite;
-            margin-bottom: 18px;
-        }
-
-        @keyframes codePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.04); }
-        }
-
-        .secret-subtext {
-            font-size: 0.98rem;
-            color: rgba(255, 255, 255, 0.78);
-            margin-bottom: 24px;
-        }
-
-        /* TRANZIȚIE CURATĂ TINI (FĂRĂ GLITCH ȘI FĂRĂ TEXTE TINI PE FUNDAL) */
         #cleanTiniVoiceLayer {
             position: fixed;
             inset: 0;
@@ -711,29 +684,16 @@
             transition: opacity 0.45s ease;
         }
 
-        #cleanTiniVoiceLayer.visible {
-            opacity: 1;
-        }
-
+        #cleanTiniVoiceLayer.visible { opacity: 1; }
         #cleanTiniVoiceLayer img {
             max-width: min(76vw, 390px);
             max-height: 66vh;
-            width: auto;
-            height: auto;
             object-fit: contain;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 65, 165, 0.35);
-            animation: cleanPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        @keyframes cleanPop {
-            0% { transform: scale(0.82); opacity: 0.2; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* =========================================================
-           ETAPA 2: BACKSTAGE — THE MISSING SETLIST
-           ========================================================= */
+        /* BACKSTAGE STAGE (6 OBJECTS) */
         #backstageStage {
             position: fixed;
             inset: 0;
@@ -743,1024 +703,153 @@
             background:
                 radial-gradient(circle at 18% 18%, rgba(255, 36, 145, 0.25), transparent 42%),
                 radial-gradient(circle at 82% 22%, rgba(155, 45, 255, 0.28), transparent 45%),
-                radial-gradient(circle at 50% 85%, rgba(0, 225, 255, 0.14), transparent 55%),
                 linear-gradient(180deg, #10071e 0%, #090512 58%, #050309 100%);
             overflow-y: auto;
         }
 
         .bs-topbar {
-            position: sticky;
-            top: 0;
-            z-index: 15;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 14px 20px;
-            background: rgba(12, 7, 24, 0.84);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 120, 210, 0.22);
+            position: sticky; top: 0; z-index: 15; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+            padding: 14px 20px; background: rgba(12, 7, 24, 0.84); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 120, 210, 0.22);
         }
 
-        .bs-title-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .bs-brand {
-            font-family: 'Press Start 2P', monospace;
-            font-size: clamp(0.68rem, 1.9vw, 0.9rem);
-            line-height: 1.4;
-            color: #ff80d5;
-            text-shadow: 0 0 14px rgba(255, 64, 170, 0.65);
-        }
-
-        .bs-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .bs-progress-pill {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.78rem;
-            color: #00f0ff;
-            background: rgba(0, 240, 255, 0.12);
-            border: 1px solid rgba(0, 240, 255, 0.42);
-            padding: 8px 14px;
-            border-radius: 999px;
-            box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);
-        }
-
-        .bs-audio-btn {
-            appearance: none;
-            cursor: pointer;
-            font-family: 'Jost', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            border-radius: 999px;
-            padding: 8px 14px;
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-
-        .bs-audio-btn:hover {
-            background: rgba(255, 255, 255, 0.16);
-            border-color: #ff80d5;
-        }
-
-        /* PIXEL-ART TINI (reaction.gif) SPRITE & ANIMATIONS */
-        .pixel-tini-wrap {
-            position: relative;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        .bs-brand { font-family: 'Press Start 2P', monospace; font-size: clamp(0.68rem, 1.9vw, 0.9rem); color: #ff80d5; }
+        .bs-progress-pill { font-family: 'Press Start 2P', monospace; font-size: 0.78rem; color: #00f0ff; background: rgba(0, 240, 255, 0.12); border: 1px solid rgba(0, 240, 255, 0.42); padding: 8px 14px; border-radius: 999px; }
+        .bs-audio-btn { cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.24); border-radius: 999px; padding: 8px 14px; }
 
         .pixel-tini-img {
-            width: 152px;
-            height: 152px;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
-            object-fit: contain;
-            border-radius: 14px;
-            filter: drop-shadow(0 10px 22px rgba(255, 50, 160, 0.38));
-            animation: pixelIdleBob 1.9s steps(2, end) infinite;
+            width: 140px; height: 140px; image-rendering: pixelated; object-fit: contain; border-radius: 14px;
+            filter: drop-shadow(0 10px 22px rgba(255, 50, 160, 0.38)); animation: pixelIdleBob 1.9s steps(2, end) infinite;
         }
+        .pixel-tini-img.talking { animation: pixelTalkBounce 0.26s steps(2, end) infinite; }
+        @keyframes pixelIdleBob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-4px); } }
+        @keyframes pixelTalkBounce { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
 
-        .pixel-tini-img.talking {
-            animation: pixelTalkBounce 0.26s steps(2, end) infinite;
-        }
-
-        .pixel-tini-img.happy {
-            animation: pixelHappyJump 0.55s steps(3, end) 2;
-        }
-
-        @keyframes pixelIdleBob {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-4px); }
-        }
-
-        @keyframes pixelTalkBounce {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-5px) scale(1.03, 0.98); }
-        }
-
-        @keyframes pixelHappyJump {
-            0% { transform: translateY(0) scale(1); }
-            45% { transform: translateY(-14px) scale(1.05); }
-            100% { transform: translateY(0) scale(1); }
-        }
-
-        /* INTRO BACKSTAGE */
-        .bs-intro-screen {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
-            animation: fadeInScene 0.5s ease forwards;
-        }
-
+        .bs-intro-screen, .bs-room-screen, .bs-final-screen { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; gap: 16px; }
         .bs-dialogue-panel {
-            width: 100%;
-            max-width: 720px;
-            background: rgba(20, 11, 38, 0.9);
-            border: 2px solid rgba(255, 95, 195, 0.45);
-            border-radius: 24px;
-            padding: 28px 24px;
-            box-shadow:
-                0 24px 70px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(185, 45, 255, 0.24);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            text-align: center;
+            width: 100%; max-width: 720px; background: rgba(20, 11, 38, 0.9); border: 2px solid rgba(255, 95, 195, 0.45); border-radius: 24px; padding: 26px 22px;
+            display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
         }
-
-        .bs-speaker-tag {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.72rem;
-            color: #ff85d8;
-            letter-spacing: 0.08em;
-        }
-
-        .bs-speech-bubble {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(0, 240, 255, 0.32);
-            border-radius: 18px;
-            padding: 18px 20px;
-            font-size: clamp(1.08rem, 2.7vw, 1.32rem);
-            line-height: 1.55;
-            font-weight: 600;
-            color: #ffffff;
-            max-width: 600px;
-        }
-
-        /* CAMERA DE BACKSTAGE */
-        .bs-room-screen {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            gap: 18px;
-        }
-
-        .bs-room-header-strip {
-            width: 100%;
-            max-width: 960px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(24, 13, 44, 0.82);
-            border: 1px solid rgba(255, 115, 205, 0.3);
-            border-radius: 20px;
-            padding: 12px 18px;
-        }
-
-        .bs-room-header-strip .pixel-tini-img {
-            width: 72px;
-            height: 72px;
-            flex-shrink: 0;
-        }
-
-        .bs-room-hint-text {
-            font-size: clamp(0.95rem, 2.2vw, 1.12rem);
-            line-height: 1.42;
-            color: rgba(255, 255, 255, 0.92);
-        }
+        .bs-speech-bubble { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.32); border-radius: 18px; padding: 16px 20px; font-size: 1.15rem; line-height: 1.5; font-weight: 600; }
 
         .bs-room-canvas {
-            position: relative;
-            width: 100%;
-            max-width: 960px;
-            min-height: 450px;
-            border-radius: 28px;
-            padding: 28px 22px 26px;
-            background:
-                radial-gradient(circle at 50% 12%, rgba(255, 195, 95, 0.16), transparent 36%),
-                radial-gradient(circle at 15% 40%, rgba(255, 35, 145, 0.24), transparent 45%),
-                radial-gradient(circle at 85% 40%, rgba(145, 45, 255, 0.28), transparent 45%),
-                linear-gradient(180deg, #1b0c33 0%, #120824 52%, #0c0518 100%);
-            border: 2px solid rgba(255, 110, 205, 0.38);
-            box-shadow:
-                0 25px 80px rgba(0, 0, 0, 0.85),
-                inset 0 0 60px rgba(170, 50, 255, 0.16);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 22px;
+            width: 100%; max-width: 960px; border-radius: 28px; padding: 24px 20px;
+            background: radial-gradient(circle at 50% 12%, rgba(255, 195, 95, 0.16), transparent 36%), linear-gradient(180deg, #1b0c33 0%, #0c0518 100%);
+            border: 2px solid rgba(255, 110, 205, 0.38); display: flex; flex-direction: column; gap: 20px;
         }
 
-        /* OGLINDĂ CU BECURI DE BACKSTAGE */
-        .vanity-mirror {
-            align-self: center;
-            width: min(92%, 440px);
-            background: rgba(255, 255, 255, 0.05);
-            border: 3px solid rgba(255, 175, 225, 0.45);
-            border-radius: 22px;
-            padding: 12px 16px 14px;
-            box-shadow: 0 0 32px rgba(255, 120, 210, 0.22);
-        }
+        .vanity-mirror { align-self: center; width: min(92%, 440px); background: rgba(255, 255, 255, 0.05); border: 3px solid rgba(255, 175, 225, 0.45); border-radius: 22px; padding: 12px; }
+        .bulb-row { display: flex; justify-content: space-between; gap: 6px; margin-bottom: 10px; }
+        .vanity-bulb { width: 11px; height: 11px; border-radius: 50%; background: #ffe89e; box-shadow: 0 0 10px #ffd24c; animation: bulbGlow 2.4s infinite; }
+        @keyframes bulbGlow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; transform: scale(1.1); } }
+        .mirror-glass { border-radius: 14px; padding: 10px; text-align: center; background: rgba(255,255,255,0.1); font-family: 'Press Start 2P', monospace; font-size: 0.7rem; }
 
-        .bulb-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .vanity-bulb {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ffe89e;
-            box-shadow: 0 0 10px #ffd24c, 0 0 20px rgba(255, 210, 76, 0.75);
-            animation: bulbGlow 2.4s ease-in-out infinite;
-        }
-
-        .vanity-bulb:nth-child(even) {
-            animation-delay: 1.1s;
-        }
-
-        @keyframes bulbGlow {
-            0%, 100% { opacity: 0.78; transform: scale(0.96); }
-            50% { opacity: 1; transform: scale(1.12); }
-        }
-
-        .mirror-glass {
-            border-radius: 14px;
-            padding: 10px 14px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(0, 240, 255, 0.08));
-            font-family: 'Press Start 2P', monospace;
-            font-size: clamp(0.62rem, 1.5vw, 0.76rem);
-            color: rgba(255, 255, 255, 0.9);
-            letter-spacing: 0.08em;
-        }
-
-        /* CELE 4 OBIECTE INTERACTIVE */
-        .objects-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        @media (max-width: 780px) {
-            .objects-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
+        .objects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+        @media (max-width: 720px) { .objects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
         .bs-object-btn {
-            appearance: none;
-            cursor: pointer;
-            font-family: 'Jost', sans-serif;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1.5px solid rgba(255, 130, 215, 0.35);
-            border-radius: 20px;
-            padding: 18px 14px;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-            position: relative;
-        }
-
-        .bs-object-btn:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.12);
-            border-color: #00f0ff;
-            box-shadow: 0 12px 28px rgba(0, 240, 255, 0.24);
-        }
-
-        .bs-object-btn.solved {
-            background: rgba(0, 230, 130, 0.14);
-            border-color: #00e682;
-            box-shadow: 0 0 26px rgba(0, 230, 130, 0.32);
-        }
-
-        .bs-obj-icon {
-            font-size: 2.3rem;
-            animation: floatIcon 2.8s ease-in-out infinite;
-        }
-
-        .bs-obj-name {
-            font-weight: 800;
-            font-size: 1.02rem;
-            letter-spacing: 0.04em;
-        }
-
-        .bs-obj-status {
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #ff9ce0;
-        }
-
-        .bs-object-btn.solved .bs-obj-status {
-            color: #6effbe;
-        }
-
-        .setlist-tray {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding-top: 6px;
-        }
-
-        .setlist-slot {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.65rem;
-            padding: 8px 12px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px dashed rgba(255, 255, 255, 0.25);
-            color: rgba(255, 255, 255, 0.55);
-        }
-
-        .setlist-slot.found {
-            background: rgba(255, 65, 165, 0.2);
-            border: 1px solid #ff70c8;
-            color: #ffffff;
-            box-shadow: 0 0 14px rgba(255, 65, 165, 0.35);
-        }
-
-        /* MODAL PROVOCARE EMOJI */
-        .bs-challenge-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 85;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: rgba(4, 2, 10, 0.84);
-            backdrop-filter: blur(8px);
-            animation: fadeInScene 0.3s ease forwards;
-        }
-
-        .bs-challenge-card {
-            width: 100%;
-            max-width: 520px;
-            background: #170d2b;
-            border: 2px solid rgba(0, 240, 255, 0.45);
-            border-radius: 24px;
-            padding: 26px 22px;
-            text-align: center;
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.9), 0 0 36px rgba(255, 55, 165, 0.25);
-        }
-
-        .bs-challenge-obj-tag {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #00f0ff;
-            margin-bottom: 10px;
-        }
-
-        .bs-emoji-puzzle {
-            font-size: clamp(2.4rem, 8vw, 3.5rem);
-            letter-spacing: 0.14em;
-            margin: 14px 0 18px;
-            padding: 18px 12px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            animation: floatIcon 2.4s ease-in-out infinite;
-        }
-
-        .bs-challenge-prompt {
-            font-size: 1.08rem;
-            font-weight: 600;
-            margin-bottom: 18px;
-            color: rgba(255, 255, 255, 0.92);
-        }
-
-        .bs-challenge-feedback {
-            margin-top: 14px;
-            min-height: 24px;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .bs-challenge-actions {
-            margin-top: 16px;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .btn-secondary {
-            appearance: none;
-            cursor: pointer;
-            font-family: 'Jost', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 999px;
-            padding: 10px 18px;
-        }
-
-        /* FINAL BACKSTAGE */
-        .bs-final-screen {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
-            animation: fadeInScene 0.6s ease forwards;
-        }
-
-        /* CODUL FINAL 8-TI DUPĂ SETLIST 4/4 */
-        .final-code-display {
-            font-family: 'Press Start 2P', monospace;
-            font-size: clamp(2.6rem, 11vw, 4.4rem);
-            letter-spacing: 0.22em;
-            padding: 16px 24px;
-            border-radius: 18px;
-            background: rgba(0, 240, 255, 0.1);
-            border: 2px solid rgba(0, 240, 255, 0.55);
-            color: #ffffff;
-            text-shadow:
-                0 0 22px rgba(0, 240, 255, 0.8),
-                0 0 42px rgba(255, 64, 170, 0.55);
-            animation: codePulse 2.2s ease-in-out infinite;
-        }
-
-        /* =========================================================
-           ETAPA 3: FINAL EXPERIENCE – KRISS, THIS IS YOUR NIGHT
-           ========================================================= */
-        #finalConcertStage {
-            position: fixed;
-            inset: 0;
-            z-index: 95;
-            background: #05020a;
-            color: #ffffff;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .fe-screen {
-            min-height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
-            position: relative;
-            animation: fadeInScene 0.55s ease forwards;
-        }
-
-        /* 1. SECRET CODE UNLOCK (0908-TINI) */
-        .fe-unlock-card {
-            width: 100%;
-            max-width: 480px;
-            background:
-                radial-gradient(circle at 50% 0%, rgba(255, 45, 165, 0.24), transparent 60%),
-                rgba(16, 7, 30, 0.92);
-            border: 1.5px solid rgba(255, 95, 205, 0.45);
-            border-radius: 28px;
-            padding: 34px 26px;
-            text-align: center;
-            box-shadow:
-                0 25px 80px rgba(0, 0, 0, 0.88),
-                0 0 48px rgba(175, 45, 255, 0.26);
-        }
-
-        .fe-unlock-title {
-            font-size: clamp(1.4rem, 4vw, 1.95rem);
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            margin-bottom: 10px;
-            color: #ffffff;
-            text-shadow: 0 0 24px rgba(255, 65, 175, 0.55);
-        }
-
-        .fe-unlock-sub {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 24px;
-            line-height: 1.45;
-        }
-
-        .fe-code-input {
-            width: 100%;
-            padding: 16px 18px;
-            border-radius: 16px;
-            border: 1.5px solid rgba(255, 120, 215, 0.45);
-            background: rgba(5, 2, 12, 0.85);
-            color: #ffffff;
-            font-family: 'Press Start 2P', monospace;
-            font-size: clamp(0.95rem, 3.2vw, 1.25rem);
-            text-align: center;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            outline: none;
-            margin-bottom: 16px;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .fe-code-input:focus {
-            border-color: #ff55c8;
-            box-shadow: 0 0 24px rgba(255, 85, 200, 0.35);
-        }
-
-        .fe-error-msg {
-            min-height: 24px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #ff6b9d;
-            margin-bottom: 16px;
-        }
-
-        /* 2. TINI INTRODUCTION */
-        .fe-intro-card {
-            width: 100%;
-            max-width: 680px;
-            background:
-                radial-gradient(circle at 50% 10%, rgba(190, 45, 255, 0.25), transparent 60%),
-                rgba(16, 7, 30, 0.92);
-            border: 1.5px solid rgba(255, 95, 205, 0.45);
-            border-radius: 28px;
-            padding: 32px 24px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.88), 0 0 45px rgba(255, 50, 170, 0.22);
-        }
-
-        .fe-dialogue-box {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 120, 215, 0.35);
-            border-radius: 20px;
-            padding: 20px 22px;
-            font-size: clamp(1.08rem, 2.8vw, 1.35rem);
-            line-height: 1.55;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        /* 3. CONCERT OPENING */
-        .fe-opening-screen {
-            background: #000000;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .opening-stage-glow {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.4s ease, filter 0.3s ease;
-            background:
-                radial-gradient(circle at 50% 35%, rgba(255, 45, 175, 0.55), transparent 55%),
-                radial-gradient(circle at 25% 75%, rgba(150, 40, 255, 0.5), transparent 55%),
-                radial-gradient(circle at 75% 75%, rgba(255, 90, 210, 0.45), transparent 55%);
-        }
-
-        .opening-countdown {
-            font-family: 'Press Start 2P', monospace;
-            font-size: clamp(3rem, 12vw, 6.2rem);
-            color: #ffffff;
-            text-shadow: 0 0 30px #ff38b8, 0 0 65px #9b2dff;
-            margin-bottom: 18px;
-            z-index: 2;
-        }
-
-        .opening-status {
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: #ff9ce3;
-            margin-bottom: 24px;
-            z-index: 2;
-        }
-
-        .opening-reveal-title {
-            font-size: clamp(2rem, 7vw, 4.4rem);
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 0 0 28px rgba(255, 65, 185, 0.9), 0 0 65px rgba(155, 45, 255, 0.8);
-            z-index: 2;
-            animation: revealPulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes revealPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-        }
-
-        /* 4 & 5. CONCERT ACT I + PLAYER */
-        .fe-concert-active {
-            justify-content: flex-start;
-            padding: 16px;
-            gap: 16px;
-            min-height: 100vh;
-        }
-
-        .concert-shell {
-            width: 100%;
-            max-width: 1120px;
-            border-radius: 28px;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-            border: 1.5px solid rgba(255, 110, 210, 0.35);
-            box-shadow: 0 28px 90px rgba(0, 0, 0, 0.9);
-            transition: background 0.8s ease, box-shadow 0.8s ease, border-color 0.8s ease;
-        }
-
-        .concert-shell.act-1 {
-            background:
-                radial-gradient(circle at 20% 20%, rgba(255, 95, 195, 0.34), transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(165, 65, 255, 0.34), transparent 52%),
-                linear-gradient(160deg, #240938 0%, #140522 100%);
-        }
-
-        .act-header {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .act-kicker {
-            font-family: 'Press Start 2P', monospace;
-            font-size: clamp(0.65rem, 1.8vw, 0.82rem);
-            color: #ff9ce3;
-            letter-spacing: 0.1em;
-        }
-
-        .act-title {
-            font-size: clamp(1.45rem, 4.2vw, 2.35rem);
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-shadow: 0 0 22px rgba(255, 65, 185, 0.65);
-        }
-
-        /* VIDEO & VISUAL SCREEN */
-        .screen-frame {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: clamp(250px, 48vh, 460px);
-            border-radius: 22px;
-            overflow: hidden;
-            background: #070310;
-            border: 2px solid rgba(255, 120, 215, 0.4);
-            box-shadow: 0 0 40px rgba(170, 45, 255, 0.28);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .screen-frame.fullscreen-mode {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 120;
-            border-radius: 0;
-            border: none;
-        }
-
-        #actVideo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        #actPhotoFallback {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.35s ease, filter 0.35s ease;
-        }
-
-        .beat-pulse {
-            transform: scale(1.035) !important;
-            filter: brightness(1.16) saturate(1.25) !important;
-        }
-
-        .media-loader {
-            position: absolute;
-            inset: 0;
-            background: rgba(8, 3, 16, 0.72);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            z-index: 4;
-            font-size: 0.85rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #ffb3ea;
-        }
-
-        .loader-spinner {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 130, 220, 0.25);
-            border-top-color: #ff47be;
-            animation: spinRing 0.8s linear infinite;
-        }
-
-        @keyframes spinRing {
-            to { transform: rotate(360deg); }
-        }
-
-        .stage-art-overlay {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: linear-gradient(180deg, rgba(10, 3, 20, 0.15) 0%, rgba(10, 3, 20, 0.68) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 18px 22px;
-            z-index: 3;
-        }
-
-        .now-playing-label {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.65rem;
-            color: #ff9ce3;
-            margin-bottom: 6px;
-        }
-
-        .now-playing-song {
-            font-size: clamp(1.1rem, 2.6vw, 1.5rem);
-            font-weight: 800;
-            letter-spacing: 0.06em;
-        }
-
-        /* PLAYER CONTROLS */
-        .player-bar {
-            position: relative;
-            z-index: 2;
-            margin-top: 14px;
-            background: rgba(14, 6, 26, 0.88);
-            border: 1px solid rgba(255, 120, 215, 0.3);
-            border-radius: 20px;
-            padding: 14px 18px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 14px;
-        }
-
-        .player-btns {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .player-btn {
-            appearance: none;
-            cursor: pointer;
-            font-family: 'Jost', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 130, 220, 0.38);
-            border-radius: 999px;
-            padding: 10px 16px;
-            transition: transform 0.15s ease, background 0.2s ease;
-        }
-
-        .player-btn:hover {
-            transform: scale(1.03);
-            background: rgba(255, 65, 185, 0.25);
-        }
-
-        .player-btn.accent {
-            background: linear-gradient(135deg, #ff2ea6, #8f2bff);
-            border-color: #ffb3ea;
-        }
-
-        .volume-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #ffd1f2;
-        }
-
-        .volume-box input[type="range"] {
-            accent-color: #ff47be;
-            cursor: pointer;
-            width: 110px;
-        }
-
-        /* 6. FINAL MOMENT & VIP TICKET */
-        .fe-final-screen {
-            background: #000000;
-            text-align: center;
-            gap: 24px;
-            padding: 32px 20px;
-        }
-
-        .one-last-thing {
-            font-size: clamp(1.8rem, 6vw, 3.2rem);
-            font-weight: 800;
-            letter-spacing: 0.2em;
-            color: #ffffff;
-            text-shadow: 0 0 28px rgba(255, 70, 190, 0.75);
-            opacity: 0;
-            transition: opacity 1.4s ease;
-        }
-
-        .one-last-thing.shown {
-            opacity: 1;
-        }
-
-        .final-video-wrap {
-            width: 100%;
-            max-width: 760px;
-            border-radius: 22px;
-            overflow: hidden;
-            border: 2px solid rgba(255, 120, 215, 0.45);
-            box-shadow: 0 0 42px rgba(170, 45, 255, 0.32);
-            background: #070310;
-        }
-
-        .final-video-wrap video {
-            width: 100%;
-            max-height: 44vh;
-            object-fit: cover;
-            display: block;
-        }
-
-        .vip-ticket {
-            width: 100%;
-            max-width: 560px;
-            border-radius: 24px;
-            padding: 28px 24px;
-            background:
-                radial-gradient(circle at 15% 15%, rgba(255, 65, 185, 0.38), transparent 55%),
-                radial-gradient(circle at 85% 85%, rgba(145, 45, 255, 0.42), transparent 55%),
-                linear-gradient(135deg, #1f0836 0%, #110420 100%);
-            border: 2px solid rgba(255, 130, 225, 0.65);
-            box-shadow:
-                0 0 50px rgba(255, 55, 180, 0.35),
-                0 25px 75px rgba(0, 0, 0, 0.9);
-            text-align: left;
-            position: relative;
-        }
-
-        .ticket-top-tag {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.72rem;
-            color: #ff9ce3;
-            letter-spacing: 0.12em;
-            margin-bottom: 12px;
-        }
-
-        .ticket-name {
-            font-size: clamp(2rem, 7vw, 3rem);
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 85, 200, 0.7);
-            margin-bottom: 6px;
-        }
-
-        .ticket-tagline {
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: #f3b8ff;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px dashed rgba(255, 150, 230, 0.38);
-        }
-
-        .ticket-meta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-        }
-
-        @media (max-width: 520px) {
-            .ticket-meta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .ticket-meta-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 140, 225, 0.25);
-            border-radius: 14px;
-            padding: 12px;
-        }
-
-        .ticket-meta-label {
-            font-size: 0.72rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #ff9ce3;
-            margin-bottom: 4px;
-        }
-
-        .ticket-meta-value {
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: #ffffff;
-        }
-
-        /* 7. PERSONAL MESSAGE */
-        .personal-msg-card {
-            width: 100%;
-            max-width: 660px;
-            background: rgba(20, 8, 36, 0.88);
-            border: 1.5px solid rgba(255, 115, 215, 0.42);
-            border-radius: 26px;
-            padding: 30px 24px;
-            text-align: center;
-            box-shadow: 0 20px 65px rgba(0, 0, 0, 0.85), 0 0 38px rgba(170, 45, 255, 0.25);
-        }
-
-        .personal-msg-text {
-            font-size: clamp(1.05rem, 2.6vw, 1.28rem);
-            line-height: 1.65;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.94);
-            margin-bottom: 22px;
-        }
-
-        .esta-noche-title {
-            font-size: clamp(1.6rem, 5.2vw, 2.75rem);
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 0 0 24px #ff38b8, 0 0 50px #9b2dff;
-        }
-
-        .hidden {
-            display: none !important;
-        }
+            cursor: pointer; font-family: 'Jost', sans-serif; background: rgba(255, 255, 255, 0.06); border: 1.5px solid rgba(255, 130, 215, 0.35);
+            border-radius: 20px; padding: 16px 12px; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 6px; transition: transform 0.2s;
+        }
+        .bs-object-btn:hover { transform: translateY(-4px); border-color: #00f0ff; }
+        .bs-object-btn.solved { background: rgba(0, 230, 130, 0.14); border-color: #00e682; }
+        .bs-obj-icon { font-size: 2rem; }
+        .bs-obj-name { font-weight: 800; font-size: 1rem; }
+        .bs-obj-status { font-size: 0.75rem; text-transform: uppercase; color: #ff9ce0; font-weight: 700; }
+
+        .bs-challenge-overlay { position: fixed; inset: 0; z-index: 85; display: flex; justify-content: center; align-items: center; padding: 20px; background: rgba(4, 2, 10, 0.85); backdrop-filter: blur(8px); }
+        .bs-challenge-card { width: 100%; max-width: 520px; background: #170d2b; border: 2px solid rgba(0, 240, 255, 0.45); border-radius: 24px; padding: 24px; text-align: center; }
+        .bs-emoji-puzzle { font-size: 2.6rem; margin: 14px 0; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.05); }
+        .btn-secondary { cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 700; color: #fff; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 999px; padding: 10px 18px; }
+
+        /* LOST MEMORIES STAGE (12 PAIRS = 24 CARDS) */
+        #memoriesStage {
+            position: fixed; inset: 0; z-index: 75; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 18px;
+            background: radial-gradient(circle at 50% 20%, rgba(255, 0, 120, 0.22), transparent 55%), #070312; overflow-y: auto;
+        }
+        .memories-panel { width: 100%; max-width: 820px; background: rgba(18, 10, 34, 0.94); border: 2px solid rgba(0, 240, 255, 0.35); border-radius: 24px; padding: 22px; text-align: center; }
+        .mem-stats-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; font-weight: 700; color: #00f0ff; }
+        .memory-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 12px 0; perspective: 1000px; }
+        @media (max-width: 650px) { .memory-grid { grid-template-columns: repeat(4, 1fr); } }
+        .mem-card { height: 74px; position: relative; transform-style: preserve-3d; transition: transform 0.35s; cursor: pointer; }
+        .mem-card.flipped, .mem-card.matched { transform: rotateY(180deg); }
+        .mem-face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); }
+        .mem-front { background: rgba(35, 16, 62, 0.9); color: #ff55c8; font-family: 'Press Start 2P', monospace; font-size: 1rem; }
+        .mem-back { background: rgba(0, 240, 255, 0.18); color: #fff; transform: rotateY(180deg); border-color: #00f0ff; font-size: 0.85rem; font-weight: 700; padding: 4px; text-align: center; }
+        .mem-card.matched .mem-back { background: rgba(0, 230, 130, 0.25); border-color: #00e682; }
+
+        /* FINAL TRANSMISSION STAGE */
+        #transmissionStage {
+            position: fixed; inset: 0; z-index: 80; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.16), transparent 60%), linear-gradient(180deg, #040b14 0%, #02050a 100%); overflow-y: auto;
+        }
+        .transmission-panel {
+            width: 100%; max-width: 640px; background: rgba(6, 18, 32, 0.94); border: 2px solid #00f0ff; border-radius: 20px; padding: 26px 22px; text-align: center;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.22);
+        }
+        .logic-clues { text-align: left; background: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.25); border-radius: 14px; padding: 14px 16px; margin: 14px 0; font-size: 0.95rem; line-height: 1.5; }
+        .code-screen-box { font-family: 'Press Start 2P', monospace; font-size: clamp(1rem, 3.5vw, 1.45rem); padding: 14px; background: #000; border: 1.5px solid #00f0ff; border-radius: 12px; letter-spacing: 3px; color: #00f0ff; margin: 14px 0; }
+        .manual-code-input {
+            width: 100%; max-width: 360px; padding: 12px 16px; border-radius: 12px;
+            border: 1.5px solid rgba(0, 240, 255, 0.55); background: rgba(0, 0, 0, 0.85);
+            color: #ffffff; font-family: 'Press Start 2P', monospace; font-size: 1rem;
+            text-align: center; letter-spacing: 0.12em; text-transform: uppercase; outline: none; margin: 8px auto 12px; display: block;
+        }
+        .virtual-keypad { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; max-width: 400px; margin: 12px auto; }
+        .vkey-btn { cursor: pointer; font-family: 'Press Start 2P', monospace; font-size: 0.85rem; padding: 12px 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(0,240,255,0.5); border-radius: 10px; color: #fff; }
+        .vkey-btn:hover { background: rgba(0, 240, 255, 0.25); }
+
+        /* CONCERT & FINAL EXPERIENCE STAGE */
+        #finalConcertStage { position: fixed; inset: 0; z-index: 95; background: #05020a; color: #ffffff; overflow-y: auto; overflow-x: hidden; }
+        .fe-screen { min-height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 24px; position: relative; animation: fadeInScene 0.55s ease forwards; }
+        .fe-unlock-card, .fe-intro-card {
+            width: 100%; max-width: 580px; background: radial-gradient(circle at 50% 0%, rgba(255, 45, 165, 0.24), transparent 60%), rgba(16, 7, 30, 0.92);
+            border: 1.5px solid rgba(255, 95, 205, 0.45); border-radius: 28px; padding: 32px 24px; text-align: center;
+        }
+        .exact-final-message {
+            font-size: 1.2rem; line-height: 1.6; margin-bottom: 22px; font-weight: 700; color: #ffffff;
+            text-shadow: 0 0 18px rgba(0, 240, 255, 0.35);
+        }
+
+        .fe-opening-screen { background: #000000; text-align: center; }
+        .opening-countdown { font-family: 'Press Start 2P', monospace; font-size: clamp(3rem, 12vw, 6.2rem); color: #ffffff; text-shadow: 0 0 30px #ff38b8, 0 0 65px #9b2dff; margin-bottom: 18px; }
+        .opening-status { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #ff9ce3; margin-bottom: 20px; }
+
+        .fe-concert-active { justify-content: flex-start; padding: 16px; gap: 16px; min-height: 100vh; }
+        .concert-shell { width: 100%; max-width: 1080px; border-radius: 28px; padding: 20px; background: linear-gradient(160deg, #240938 0%, #140522 100%); border: 1.5px solid rgba(255, 110, 210, 0.35); }
+        .act-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .act-kicker { font-family: 'Press Start 2P', monospace; font-size: 0.78rem; color: #ff9ce3; }
+        .act-title { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 800; text-transform: uppercase; }
+        .act-intro-banner { background: rgba(255,255,255,0.06); border-left: 4px solid #ff47be; padding: 10px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 0.98rem; color: #ffe6f7; }
+
+        .screen-frame { position: relative; width: 100%; height: clamp(240px, 45vh, 440px); border-radius: 22px; overflow: hidden; background: #070310; border: 2px solid rgba(255, 120, 215, 0.4); }
+        #actVideo, #actPhotoFallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+        .player-bar { margin-top: 14px; background: rgba(14, 6, 26, 0.88); border: 1px solid rgba(255, 120, 215, 0.3); border-radius: 20px; padding: 14px 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+        .player-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+        .player-btn { cursor: pointer; font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 700; text-transform: uppercase; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,130,220,0.38); border-radius: 999px; padding: 10px 16px; }
+        .player-btn.accent { background: linear-gradient(135deg, #ff2ea6, #8f2bff); }
+        .volume-box { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 700; color: #ffd1f2; }
+
+        .fe-final-screen { background: #000000; text-align: center; gap: 22px; padding: 32px 20px; }
+        .one-last-thing { font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 800; letter-spacing: 0.2em; opacity: 0; transition: opacity 1.2s ease; }
+        .one-last-thing.shown { opacity: 1; }
+        .vip-ticket { width: 100%; max-width: 560px; border-radius: 24px; padding: 26px; background: linear-gradient(135deg, #1f0836 0%, #110420 100%); border: 2px solid rgba(255, 130, 225, 0.65); text-align: left; }
+        .ticket-name { font-size: 2.5rem; font-weight: 800; letter-spacing: 0.1em; }
+        .personal-msg-card { width: 100%; max-width: 660px; background: rgba(20, 8, 36, 0.88); border: 1.5px solid rgba(255, 115, 215, 0.42); border-radius: 26px; padding: 28px 24px; text-align: center; }
+        .esta-noche-title { font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 800; letter-spacing: 0.16em; margin-top: 16px; color: #ff70c8; }
+
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
-    <!-- AUDIO ETAPA 1 -->
+    <!-- AUDIO ETAPA 1 & EXISTENTE -->
     <audio id="glitchAudio" src="glitch.mp3" loop preload="auto"></audio>
     <audio id="clickAudio" src="click.mp3" preload="auto"></audio>
     <audio id="afterHoleAudio" src="after_hole.mp3" preload="auto"></audio>
-
-    <!-- AUDIO NOU DUPĂ 090 (VOCEA LUI TINI PE GIF-UL CURAT) & ETAPA 2 BACKSTAGE -->
     <audio id="tiniVoiceAudio" src="tini_voice.mp3" preload="auto"></audio>
     <audio id="backstageIntroVoice" src="backstage_intro.mp3" preload="auto"></audio>
     <audio id="backstageFinalVoice" src="backstage_final.mp3" preload="auto"></audio>
     <audio id="backstageAmbientMusic" src="backstage_ambient.mp3" loop preload="auto"></audio>
-
-    <!-- AUDIO CONCERT FINAL -->
     <audio id="concertIntroVoice" src="concert_intro_voice.mp3" preload="auto"></audio>
     <audio id="crowdCheeringAudio" src="crowd_cheering.mp3" preload="auto"></audio>
     <audio id="concertMusicAudio" preload="auto"></audio>
@@ -1775,12 +864,11 @@
         </div>
     </div>
 
-    <!-- APARIȚIA GIF-ULUI DUPĂ GAURA NEAGRĂ -->
     <div id="postHoleGifLayer" class="hidden">
         <img id="postHoleGif" src="reaction.gif" alt="Reaction GIF">
     </div>
 
-    <!-- SCENA DUPĂ INTRODUCERE: ÎNCEPE MISIUNEA -->
+    <!-- MISIUNEA / INTRO QUIZ -->
     <section id="missionScene" class="hidden">
         <div class="mission-card">
             <div class="mission-badge">Misiunea Începe</div>
@@ -1791,12 +879,12 @@
         </div>
     </section>
 
-    <!-- QUIZ-UL CU 6 ÎNTREBĂRI -->
+    <!-- QUEST 1: QUIZ EXTINS -->
     <section id="quizScene" class="hidden">
         <div class="quiz-card">
             <div class="quiz-top">
-                <span id="quizCounter" class="quiz-counter">Întrebarea 1 / 6</span>
-                <span id="quizScore" class="quiz-score">Scor: 0 / 6</span>
+                <span id="quizCounter" class="quiz-counter">Întrebarea 1 / 8</span>
+                <span id="quizScore" class="quiz-score">Scor: 0 / 8</span>
             </div>
             <div class="progress-track">
                 <div id="progressFill" class="progress-fill"></div>
@@ -1804,9 +892,8 @@
 
             <div id="questionBody">
                 <div id="questionVisual" class="question-visual">
-                    <img id="questionImg" class="hidden" alt="Ilustrație întrebare">
-                    <div id="questionAnimBadge" class="visual-badge-anim">✨</div>
-                    <div id="questionVisualCaption" class="visual-caption">Amintiri TINI</div>
+                    <div id="questionAnimBadge" class="visual-badge-anim">🎤✨</div>
+                    <div id="questionVisualCaption" class="visual-caption">Violetta & TINI • Provocare</div>
                 </div>
 
                 <h2 id="questionText" class="question-text"></h2>
@@ -1819,7 +906,7 @@
             </div>
 
             <div id="resultBox" class="result-box hidden">
-                <div id="resultEmoji" class="result-emoji">💖</div>
+                <div id="resultEmoji" class="result-emoji">💫</div>
                 <h2 id="resultTitle" class="result-title"></h2>
                 <p id="resultDesc" class="result-desc"></p>
                 <button id="restartQuizBtn" class="btn-primary" type="button">Joacă Din Nou</button>
@@ -1827,203 +914,195 @@
         </div>
     </section>
 
-    <!-- CODUL SECRET 090 LA SCOR 6/6 -->
+    <!-- ECRAN FRAGMENT DEBLOCAT -->
     <section id="secretCodeScene" class="hidden">
         <div class="secret-code-box">
-            <div class="secret-label">6 / 6 • Cod Deblocat</div>
-            <div class="secret-code-digits">090</div>
-            <p class="secret-subtext">Ai deblocat codul secret.</p>
+            <div id="fragmentStageBadge" class="mission-badge">Quest Completat</div>
+            <h2 style="font-size:1.5rem; margin-bottom:8px;">✨ Fragment Deblocat ✨</h2>
+            <div id="fragmentUnlockedValue" class="unlocked-fragment-badge">909</div>
+            <p id="fragmentStageDesc" style="color:rgba(255,255,255,0.85); margin-bottom:24px; line-height:1.5;">
+                Fragmentul rămâne salvat pe ecran până la final.
+            </p>
             <button id="continueAfterCodeBtn" class="btn-primary" type="button">Continuă</button>
         </div>
     </section>
 
-    <!-- APARIȚIA CURATĂ A GIF-ULUI TINI (FĂRĂ GLITCH ȘI FĂRĂ TEXTE TINI) CU VOCEA EI -->
     <div id="cleanTiniVoiceLayer" class="hidden">
         <img id="cleanTiniGif" src="reaction.gif" alt="TINI">
     </div>
 
-    <!-- =========================================================
-         ETAPA 2: BACKSTAGE — THE MISSING SETLIST
-         ========================================================= -->
+    <!-- QUEST 2: BACKSTAGE (6 OBIECTE INTERACTIVE CU PROVOCĂRI DIVERSE) -->
     <section id="backstageStage" class="hidden">
         <header class="bs-topbar">
-            <div class="bs-title-group">
-                <span class="bs-brand">BACKSTAGE: THE MISSING SETLIST</span>
-            </div>
-            <div class="bs-controls">
-                <span id="bsProgressBadge" class="bs-progress-pill">0/4</span>
+            <span class="bs-brand">BACKSTAGE: THE MISSING SETLIST</span>
+            <div style="display:flex; gap:10px; align-items:center;">
+                <span id="bsProgressBadge" class="bs-progress-pill">0/6</span>
                 <button id="bsMusicToggleBtn" class="bs-audio-btn" type="button">Muzică: ON</button>
             </div>
         </header>
 
-        <!-- 1. INTRODUCERE BACKSTAGE -->
         <div id="bsIntroScreen" class="bs-intro-screen">
             <div class="bs-dialogue-panel">
-                <div class="bs-speaker-tag">TINI • PIXEL BACKSTAGE</div>
-                <div class="pixel-tini-wrap">
-                    <img id="bsIntroSprite" class="pixel-tini-img talking" src="reaction.gif" alt="TINI Pixel Vorbind">
-                </div>
+                <div style="font-family:'Press Start 2P'; color:#ff85d8; font-size:0.72rem;">TINI • PIXEL BACKSTAGE</div>
+                <img id="bsIntroSprite" class="pixel-tini-img talking" src="reaction.gif" alt="TINI Pixel">
                 <p class="bs-speech-bubble">
-                    „¡Kriss! Tenemos un pequeño problema... ¡Ha desaparecido la lista de canciones del concierto! Necesito tu ayuda para encontrar las cuatro canciones antes de salir al escenario. ¿Me ayudas?”
+                    „¡Kriss! Tenemos un problema en el backstage... ¡Faltan piezas del setlist y del show! Resuelve los 6 objetos con distintos retos para avanzar.”
                 </p>
                 <button id="bsEnterRoomBtn" class="btn-primary" type="button">ENTRAR AL BACKSTAGE</button>
             </div>
         </div>
 
-        <!-- 2. CAMERA DE BACKSTAGE CU 4 OBIECTE INTERACTIVE -->
         <div id="bsRoomScreen" class="bs-room-screen hidden">
-            <div class="bs-room-header-strip">
-                <img id="bsRoomSprite" class="pixel-tini-img" src="reaction.gif" alt="TINI Pixel Idle">
-                <p id="bsRoomPrompt" class="bs-room-hint-text">
-                    Apasă pe cele 4 obiecte din cameră pentru a descifra puzzle-urile cu emoji-uri și a reface setlist-ul.
-                </p>
-            </div>
-
             <div class="bs-room-canvas">
                 <div class="vanity-mirror">
                     <div class="bulb-row">
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
-                        <span class="vanity-bulb"></span>
+                        <span class="vanity-bulb"></span><span class="vanity-bulb"></span><span class="vanity-bulb"></span><span class="vanity-bulb"></span>
+                        <span class="vanity-bulb"></span><span class="vanity-bulb"></span><span class="vanity-bulb"></span><span class="vanity-bulb"></span>
                     </div>
-                    <div class="mirror-glass">DRESSING ROOM • STAGE READY</div>
+                    <div class="mirror-glass">BACKSTAGE • 6 INTERACTIVE OBJECTS</div>
                 </div>
 
                 <div class="objects-grid">
                     <button id="obj-mic" class="bs-object-btn" type="button" data-object-id="mic">
                         <span class="bs-obj-icon">🎤</span>
                         <span class="bs-obj-name">Microfon</span>
-                        <span class="bs-obj-status" data-status-for="mic">Indiciu ascuns</span>
+                        <span class="bs-obj-status" data-status-for="mic">Emoji Challenge</span>
                     </button>
-
                     <button id="obj-journal" class="bs-object-btn" type="button" data-object-id="journal">
                         <span class="bs-obj-icon">📓</span>
                         <span class="bs-obj-name">Jurnal</span>
-                        <span class="bs-obj-status" data-status-for="journal">Indiciu ascuns</span>
+                        <span class="bs-obj-status" data-status-for="journal">Logic Riddle</span>
                     </button>
-
                     <button id="obj-photo" class="bs-object-btn" type="button" data-object-id="photo">
                         <span class="bs-obj-icon">🖼️</span>
                         <span class="bs-obj-name">Fotografie</span>
-                        <span class="bs-obj-status" data-status-for="photo">Indiciu ascuns</span>
+                        <span class="bs-obj-status" data-status-for="photo">Song Clue</span>
                     </button>
-
                     <button id="obj-headphones" class="bs-object-btn" type="button" data-object-id="headphones">
                         <span class="bs-obj-icon">🎧</span>
                         <span class="bs-obj-name">Căști</span>
-                        <span class="bs-obj-status" data-status-for="headphones">Indiciu ascuns</span>
+                        <span class="bs-obj-status" data-status-for="headphones">Audio Clue</span>
+                    </button>
+                    <button id="obj-costume" class="bs-object-btn" type="button" data-object-id="costume">
+                        <span class="bs-obj-icon">👗</span>
+                        <span class="bs-obj-name">Costum</span>
+                        <span class="bs-obj-status" data-status-for="costume">Chronology</span>
+                    </button>
+                    <button id="obj-award" class="bs-object-btn" type="button" data-object-id="award">
+                        <span class="bs-obj-icon">🏆</span>
+                        <span class="bs-obj-name">Trofeu</span>
+                        <span class="bs-obj-status" data-status-for="award">Sequence Logic</span>
                     </button>
                 </div>
 
-                <div class="setlist-tray">
-                    <span class="setlist-slot" data-slot-id="mic">1. ???</span>
-                    <span class="setlist-slot" data-slot-id="journal">2. ???</span>
-                    <span class="setlist-slot" data-slot-id="photo">3. ???</span>
-                    <span class="setlist-slot" data-slot-id="headphones">4. ???</span>
+                <div style="text-align:center;">
+                    <button id="bsToMemoriesBtn" class="btn-primary hidden" type="button">CONTINUAR LA QUEST 3</button>
                 </div>
-            </div>
-        </div>
-
-        <!-- 5. FINAL BACKSTAGE + CODUL 8-TI -->
-        <div id="bsFinalScreen" class="bs-final-screen hidden">
-            <div class="bs-dialogue-panel">
-                <div class="bs-speaker-tag">SETLIST COMPLET • 4/4</div>
-                <div class="pixel-tini-wrap">
-                    <img id="bsFinalSprite" class="pixel-tini-img happy" src="reaction.gif" alt="TINI Pixel Bucuroasă">
-                </div>
-                <p class="bs-speech-bubble">
-                    „¡Lo conseguimos, Kriss! ¡El concierto ya está listo! Pero todavía queda una última sorpresa para ti...”
-                </p>
-                <div id="finalCodeBox" class="final-code-display">8-TI</div>
-                <button id="bsContinueFinalBtn" class="btn-primary" type="button">CONTINUAR</button>
             </div>
         </div>
     </section>
 
-    <!-- MODAL PROVOCARE OBIECT -->
-    <div id="bsChallengeModal" class="bs-challenge-overlay hidden" role="dialog" aria-modal="true">
+    <!-- MODAL PENTRU PROVOCĂRILE DIN BACKSTAGE -->
+    <div id="bsChallengeModal" class="bs-challenge-overlay hidden">
         <div class="bs-challenge-card">
-            <div id="bsChallengeObjectLabel" class="bs-challenge-obj-tag">OBIECT</div>
-            <div id="bsChallengeEmojis" class="bs-emoji-puzzle">🏹❤️</div>
-            <p id="bsChallengePrompt" class="bs-challenge-prompt">Ghicește melodia TINI:</p>
+            <div id="bsChallengeObjTag" style="color:#00f0ff; font-size:0.8rem; font-weight:700; letter-spacing:2px;">OBIECT</div>
+            <div id="bsChallengeVisual" class="bs-emoji-puzzle">🏹❤️</div>
+            <p id="bsChallengePrompt" style="margin-bottom:14px; font-weight:600;"></p>
             <div id="bsChallengeOptions" class="options-grid"></div>
-            <div id="bsChallengeFeedback" class="bs-challenge-feedback"></div>
-            <div class="bs-challenge-actions">
-                <button id="bsCloseChallengeBtn" class="btn-secondary" type="button">Închide</button>
-            </div>
+            <div id="bsChallengeFeedback" style="margin-top:12px; font-weight:700;"></div>
+            <button id="bsCloseChallengeBtn" class="btn-secondary" style="margin-top:14px;" type="button">Închide</button>
         </div>
     </div>
 
-    <!-- =========================================================
-         ETAPA 3: FINAL EXPERIENCE – KRISS, THIS IS YOUR NIGHT
-         ========================================================= -->
+    <!-- QUEST 3: LOST MEMORIES (JOC DE MEMORIE - 12 PERECHI = 24 CĂRȚI) -->
+    <section id="memoriesStage" class="hidden">
+        <div class="memories-panel">
+            <h2 style="color:#ff55c8; margin-bottom:6px;">QUEST 3 • LOST MEMORIES (12 PAIRS)</h2>
+            <p style="font-size:0.92rem; color:rgba(255,255,255,0.8); margin-bottom:10px;">
+                Potrivește toate cele 12 perechi din universul Violetta & TINI!
+            </p>
+            <div class="mem-stats-bar">
+                <span id="memPairsLabel">Perechi: 0 / 12</span>
+                <span id="memScoreLabel">Punctaj: 0</span>
+                <span id="memTimerLabel">Timp: 00s</span>
+            </div>
+            <div id="memoryGrid" class="memory-grid"></div>
+            <div id="memFeedback" style="min-height:24px; color:#6effbe; font-weight:700; margin-top:8px;"></div>
+            <button id="memToTransmissionBtn" class="btn-primary hidden" style="margin-top:12px;" type="button">MERGI LA CODUL FINAL</button>
+        </div>
+    </section>
+
+    <!-- CODUL FINAL MANUAL -->
+    <section id="transmissionStage" class="hidden">
+        <div class="transmission-panel">
+            <div style="font-family:'Press Start 2P'; color:#00f0ff; font-size:0.75rem; margin-bottom:8px;">CODUL SECRET FINAL</div>
+            <h2 style="font-size:1.5rem; margin-bottom:10px;">INTRODU CODUL COMPLET</h2>
+            <div class="logic-clues">
+                <div>• <strong>Quest 1:</strong> <span id="clueFrag1">___</span></div>
+                <div>• <strong>Quest 2:</strong> <span id="clueFrag2">___</span></div>
+                <div>• <strong>Quest 3:</strong> <span id="clueFrag3">_____</span></div>
+            </div>
+            <div id="virtualCodeDisplay" class="code-screen-box">___________</div>
+            <input id="manualCodeInput" class="manual-code-input" type="text" autocomplete="off" spellcheck="false" placeholder="90935-KRISS">
+            <div class="virtual-keypad">
+                <button class="vkey-btn" type="button" data-key="9">9</button>
+                <button class="vkey-btn" type="button" data-key="0">0</button>
+                <button class="vkey-btn" type="button" data-key="3">3</button>
+                <button class="vkey-btn" type="button" data-key="5">5</button>
+                <button class="vkey-btn" type="button" data-key="-">-</button>
+                <button class="vkey-btn" type="button" data-key="K">K</button>
+                <button class="vkey-btn" type="button" data-key="R">R</button>
+                <button class="vkey-btn" type="button" data-key="I">I</button>
+                <button class="vkey-btn" type="button" data-key="S">S</button>
+                <button class="vkey-btn" type="button" data-key="CLR" style="background:rgba(255,45,95,0.25);">⌫</button>
+            </div>
+            <div id="transmissionFeedback" style="min-height:24px; color:#ff6b9d; font-weight:700; margin:8px 0;"></div>
+            <button id="transmissionConfirmBtn" class="btn-primary" type="button">TRANSMITE CODUL</button>
+        </div>
+    </section>
+
+    <!-- ETAPA 5-7: CONCERT & FINAL EXPERIENCE (3 ACTE) -->
     <section id="finalConcertStage" class="hidden">
-        <!-- 1. SECRET CODE UNLOCK -->
+        <!-- ECRAN POST-COD: MESAJUL EXACT + BUTON "YA ESTOY LISTA" -->
         <div id="feUnlockScreen" class="fe-screen">
             <div class="fe-unlock-card">
-                <div class="mission-badge">FINAL EXPERIENCE</div>
-                <h1 class="fe-unlock-title">¿ESTÁS LISTA PARA TU SORPRESA?</h1>
-                <p class="fe-unlock-sub">Introduce el código secreto para desbloquear tu regalo.</p>
-                <input id="feCodeInput" class="fe-code-input" type="text" autocomplete="off" spellcheck="false" placeholder="••••-••••">
-                <div id="feCodeError" class="fe-error-msg"></div>
-                <button id="feUnlockBtn" class="btn-primary" type="button">DESBLOQUEAR</button>
-            </div>
-        </div>
-
-        <!-- 2. TINI INTRODUCTION -->
-        <div id="feIntroScreen" class="fe-screen hidden">
-            <div class="fe-intro-card">
-                <div class="bs-speaker-tag">TINI • STAGE ACCESS</div>
-                <div class="pixel-tini-wrap">
-                    <img id="feIntroSprite" class="pixel-tini-img talking" src="reaction.gif" alt="TINI Pixel">
-                </div>
-                <p class="fe-dialogue-box">
-                    „¡Kriss! ¡Lo has conseguido! Has llegado hasta el final. Pero todavía no sabes lo que te espera... ¿Estás preparada para vivir una noche especial?”
+                <div class="mission-badge">COD VALIDAT</div>
+                <img src="reaction.gif" alt="TINI" style="width:120px; height:120px; object-fit:contain; border-radius:14px; margin-bottom:14px;">
+                <p id="exactFinalMessageBox" class="exact-final-message">
+                    ¡Kriss, lo has logrado! Has llegado al final, pero aún no sabes qué te espera. ¿Estás lista para vivir una noche especial?
                 </p>
-                <button id="feStartOpeningBtn" class="btn-primary" type="button">COMENZAR EL CONCIERTO</button>
+                <button id="feYaEstoyListaBtn" class="btn-primary" type="button">YA ESTOY LISTA</button>
             </div>
         </div>
 
-        <!-- 3. CONCERT OPENING -->
+        <!-- COUNTDOWN EXACT 5 SECUNDE -->
         <div id="feOpeningScreen" class="fe-screen fe-opening-screen hidden">
-            <div id="openingStageGlow" class="opening-stage-glow"></div>
-            <div id="openingStatus" class="opening-status">FUTTTURA ARENA • CARGANDO ESCENARIO</div>
-            <div id="openingCountdown" class="opening-countdown">10</div>
-            <h1 id="openingRevealTitle" class="opening-reveal-title hidden">KRISS, THIS IS YOUR NIGHT</h1>
+            <div id="openingStatus" class="opening-status">FUTTTURA ARENA • PREPARANDO ESCENARIO</div>
+            <div id="openingCountdown" class="opening-countdown">5</div>
         </div>
 
-        <!-- 4 & 5. ACT I + MUSIC & VIDEO PLAYER -->
+        <!-- CONCERT PLAYER CU 3 ACTE -->
         <div id="feConcertScreen" class="fe-screen fe-concert-active hidden">
-            <div id="concertShell" class="concert-shell act-1">
+            <div id="concertShell" class="concert-shell">
                 <div class="act-header">
                     <div>
-                        <div id="actKicker" class="act-kicker">ACT I – VIOLETTA</div>
+                        <div id="actKicker" class="act-kicker">ACT I — VIOLETTA</div>
                         <h2 id="actTitle" class="act-title">DONDE TODO COMENZÓ</h2>
                     </div>
                 </div>
+                <div id="actIntroText" class="act-intro-banner">
+                    Atmosferă nostalgică: începuturile carierei și magia primelor vise.
+                </div>
 
-                <div id="screenFrame" class="screen-frame">
-                    <div id="mediaLoader" class="media-loader hidden">
-                        <div class="loader-spinner"></div>
-                        <span>CARGANDO ESCENA...</span>
-                    </div>
+                <div class="screen-frame">
                     <video id="actVideo" playsinline webkit-playsinline muted loop></video>
-                    <img id="actPhotoFallback" src="act1_violetta.jpg" alt="Escena del concierto">
-                    <div class="stage-art-overlay">
-                        <div id="nowPlayingActTag" class="now-playing-label">ACT I – VIOLETTA</div>
-                        <div id="nowPlayingSongTitle" class="now-playing-song">DONDE TODO COMENZÓ</div>
-                    </div>
+                    <img id="actPhotoFallback" src="act1_violetta.jpg" alt="Escena Act">
                 </div>
 
                 <div class="player-bar">
                     <div class="player-btns">
                         <button id="togglePlayPauseBtn" class="player-btn accent" type="button">PAUSA</button>
-                        <button id="fullscreenVideoBtn" class="player-btn" type="button">PANTALLA COMPLETA</button>
+                        <button id="nextActBtn" class="player-btn" type="button">SIGUIENTE ACTO ➔</button>
                         <button id="finishConcertBtn" class="player-btn" type="button">MOMENTO FINAL</button>
                     </div>
                     <div class="volume-box">
@@ -2035,36 +1114,28 @@
             </div>
         </div>
 
-        <!-- 6 & 7. FINAL MOMENT, VIDEO, VIP TICKET (COD TI) & PERSONAL MESSAGE -->
+        <!-- FINAL MOMENT, VIP TICKET KRISS & PERSONAL MESSAGE -->
         <div id="feFinalScreen" class="fe-screen fe-final-screen hidden">
             <div id="oneLastThingText" class="one-last-thing">ONE LAST THING...</div>
 
-            <div id="finalVideoWrap" class="final-video-wrap hidden">
-                <video id="finalVideoPlayer" src="act1_violetta.mp4" playsinline webkit-playsinline controls autoplay loop></video>
-            </div>
-
-            <div id="vipTicketCard" class="vip-ticket hidden">
-                <div class="ticket-top-tag">TINI – SPECIAL EDITION</div>
+            <div class="vip-ticket">
+                <div style="font-family:'Press Start 2P'; font-size:0.7rem; color:#ff9ce3; margin-bottom:10px;">TINI – SPECIAL EDITION</div>
                 <div class="ticket-name">KRISS</div>
-                <div class="ticket-tagline">ONE NIGHT. ONE DREAM.</div>
-                <div class="ticket-meta-grid">
-                    <div class="ticket-meta-item">
-                        <div class="ticket-meta-label">ACCESS</div>
-                        <div class="ticket-meta-value">ALL ACCESS VIP</div>
+                <div style="font-size:0.92rem; letter-spacing:0.2em; color:#f3b8ff; margin-bottom:16px;">ONE NIGHT. ONE DREAM.</div>
+                <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
+                    <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:12px;">
+                        <div style="font-size:0.72rem; color:#ff9ce3;">ACCESS</div>
+                        <div style="font-weight:800;">ALL ACCESS VIP</div>
                     </div>
-                    <div class="ticket-meta-item">
-                        <div class="ticket-meta-label">SEAT</div>
-                        <div class="ticket-meta-value">FRONT ROW</div>
-                    </div>
-                    <div class="ticket-meta-item">
-                        <div class="ticket-meta-label">SECRET CODE</div>
-                        <div class="ticket-meta-value">TI</div>
+                    <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:12px;">
+                        <div style="font-size:0.72rem; color:#ff9ce3;">SEAT</div>
+                        <div style="font-weight:800;">FRONT ROW</div>
                     </div>
                 </div>
             </div>
 
-            <div id="personalMessageCard" class="personal-msg-card hidden">
-                <p class="personal-msg-text">
+            <div class="personal-msg-card">
+                <p style="font-size:1.1rem; line-height:1.65;">
                     „Kriss, sé cuánto has deseado vivir un concierto de TINI. Quizás no pueda llevarte ahora mismo a uno de sus conciertos, pero quería crear algo especial para ti, algo que te hiciera sentir un poquito de esa magia. Porque tus sueños también merecen tener su propio escenario. Gracias por ser tú.”
                 </p>
                 <div class="esta-noche-title">ESTA NOCHE ES TUYA.</div>
@@ -2072,34 +1143,95 @@
         </div>
     </section>
 
+    <!-- HUD PERMANENT PENTRU FRAGMENTE DEBLOCATE -->
+    <div id="fragmentsHud">
+        <span class="frag-label">Fragmente:</span>
+        <span id="fragmentsHudValue" class="frag-value">—</span>
+    </div>
+
     <script>
         /* =========================================================
-           ETAPA 1 (PĂSTRATĂ INTACTĂ)
+           TITLU GLITCH CONTINUU (NU SE OPREȘTE NICIODATĂ)
            ========================================================= */
         const baseText = 'Surpriză!';
         const symbols = ['#', '%', '&', '?', '/', '*', '!', '~', '§', '±'];
         let step = 0;
-        let isVoid = false;
 
-        const titleInterval = setInterval(() => {
-            if (isVoid) return;
+        setInterval(() => {
             step++;
             if (step % 5 === 0) {
                 document.title = baseText + ' ❤️';
                 return;
             }
-
             const glitched = baseText.split('').map((ch, i) => {
-                if (Math.random() < 0.45) {
-                    return symbols[Math.floor(Math.random() * symbols.length)];
-                }
+                if (Math.random() < 0.45) return symbols[Math.floor(Math.random() * symbols.length)];
                 return (step + i) % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase();
             }).join('');
-
             const heart = Math.random() < 0.25 ? '🖤' : '❤️';
             document.title = `${glitched}! ${heart}`;
         }, 100);
 
+        /* =========================================================
+           COD SECRET ȘI CELE 3 FRAGMENTE: 909 + 35- + KRISS = 90935-KRISS
+           ========================================================= */
+        const FINAL_SECRET_CODE = '90935-KRISS';
+        const FRAGMENTS = {
+            q1: '909',
+            q2: '35-',
+            q3: 'KRISS'
+        };
+
+        let questCompleted = {
+            q1: false,
+            q2: false,
+            q3: false
+        };
+
+        function getUnlockedCodePrefix() {
+            let out = '';
+            if (questCompleted.q1) out += FRAGMENTS.q1;
+            if (questCompleted.q2) out += FRAGMENTS.q2;
+            if (questCompleted.q3) out += FRAGMENTS.q3;
+            return out;
+        }
+
+        function refreshFragmentsHud() {
+            const hudEl = document.getElementById('fragmentsHudValue');
+            const current = getUnlockedCodePrefix();
+            hudEl.textContent = current || '—';
+
+            const c1 = document.getElementById('clueFrag1');
+            const c2 = document.getElementById('clueFrag2');
+            const c3 = document.getElementById('clueFrag3');
+            if (c1) c1.textContent = questCompleted.q1 ? FRAGMENTS.q1 : '___';
+            if (c2) c2.textContent = questCompleted.q2 ? FRAGMENTS.q2 : '___';
+            if (c3) c3.textContent = questCompleted.q3 ? FRAGMENTS.q3 : '_____';
+        }
+
+        function completeQuestAndShowFragment(questKey, nextAction) {
+            questCompleted[questKey] = true;
+            refreshFragmentsHud();
+            playCorrectSound();
+
+            const badge = document.getElementById('fragmentStageBadge');
+            const val = document.getElementById('fragmentUnlockedValue');
+            const desc = document.getElementById('fragmentStageDesc');
+
+            const questNames = { q1: 'Quest 1', q2: 'Quest 2', q3: 'Quest 3' };
+            badge.textContent = `${questNames[questKey]} Finalizat`;
+            val.textContent = FRAGMENTS[questKey];
+            desc.textContent = `Fragment deblocat: ${FRAGMENTS[questKey]} • Cod acumulat: ${getUnlockedCodePrefix()}`;
+
+            pendingAfterFragmentAction = nextAction;
+            hideAllStages();
+            document.getElementById('secretCodeScene').classList.remove('hidden');
+        }
+
+        let pendingAfterFragmentAction = null;
+
+        /* =========================================================
+           ETAPA 1 ORIGINALĂ (VIDEO, TINI RAIN, GIF, BLACKHOLE)
+           ========================================================= */
         const sceneWrapper = document.getElementById('sceneWrapper');
         const blackHoleVortex = document.getElementById('blackHoleVortex');
         const vid = document.getElementById('vid');
@@ -2109,43 +1241,16 @@
         const gifOverlay = document.getElementById('gifOverlay');
         const clickGif = document.getElementById('clickGif');
         const tiniContainer = document.getElementById('tiniContainer');
-
         const postHoleGifLayer = document.getElementById('postHoleGifLayer');
         const postHoleGif = document.getElementById('postHoleGif');
         const missionScene = document.getElementById('missionScene');
-        const startQuizBtn = document.getElementById('startQuizBtn');
-
-        const quizScene = document.getElementById('quizScene');
-        const quizCounter = document.getElementById('quizCounter');
-        const quizScore = document.getElementById('quizScore');
-        const progressFill = document.getElementById('progressFill');
-        const questionVisual = document.getElementById('questionVisual');
-        const questionImg = document.getElementById('questionImg');
-        const questionAnimBadge = document.getElementById('questionAnimBadge');
-        const questionVisualCaption = document.getElementById('questionVisualCaption');
-        const questionText = document.getElementById('questionText');
-        const optionsGrid = document.getElementById('optionsGrid');
-        const feedbackBox = document.getElementById('feedbackBox');
-        const feedbackText = document.getElementById('feedbackText');
-        const nextQuestionBtn = document.getElementById('nextQuestionBtn');
-        const resultBox = document.getElementById('resultBox');
-        const questionBody = document.getElementById('questionBody');
-        const resultEmoji = document.getElementById('resultEmoji');
-        const resultTitle = document.getElementById('resultTitle');
-        const resultDesc = document.getElementById('resultDesc');
-        const restartQuizBtn = document.getElementById('restartQuizBtn');
-
-        const secretCodeScene = document.getElementById('secretCodeScene');
-        const continueAfterCodeBtn = document.getElementById('continueAfterCodeBtn');
-
-        const cleanTiniVoiceLayer = document.getElementById('cleanTiniVoiceLayer');
-        const cleanTiniGif = document.getElementById('cleanTiniGif');
         const tiniVoiceAudio = document.getElementById('tiniVoiceAudio');
 
         const NORMAL_VOLUME = 1.0;
         const DUCK_VOLUME = 0.2;
         let duckTimer = null;
         let hasTriggeredBlackHole = false;
+        let stage1Ended = false;
         let audioCtx = null;
 
         glitchAudio.loop = true;
@@ -2156,13 +1261,9 @@
         function ensureAudioContext() {
             if (!audioCtx) {
                 const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                if (AudioContextClass) {
-                    audioCtx = new AudioContextClass();
-                }
+                if (AudioContextClass) audioCtx = new AudioContextClass();
             }
-            if (audioCtx && audioCtx.state === 'suspended') {
-                audioCtx.resume().catch(() => {});
-            }
+            if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume().catch(() => {});
         }
 
         function playTone(freq, duration = 0.14, type = 'sine', gainVal = 0.12, delay = 0) {
@@ -2182,13 +1283,6 @@
             osc.stop(now + duration + 0.02);
         }
 
-        function playQuestionSound(index) {
-            const baseNotes = [523.25, 587.33, 659.25, 698.46, 783.99, 880.0];
-            const n = baseNotes[index % baseNotes.length];
-            playTone(n, 0.13, 'triangle', 0.09, 0);
-            playTone(n * 1.25, 0.16, 'sine', 0.08, 0.08);
-        }
-
         function playCorrectSound() {
             playTone(587.33, 0.12, 'triangle', 0.12, 0);
             playTone(783.99, 0.12, 'triangle', 0.12, 0.09);
@@ -2206,7 +1300,6 @@
                 playTone(330, 0.22, 'sine', 0.1, 0);
                 playTone(440, 0.24, 'sine', 0.1, 0.14);
                 playTone(554.37, 0.28, 'sine', 0.11, 0.28);
-                playTone(659.25, 0.4, 'triangle', 0.12, 0.42);
             });
         }
 
@@ -2220,11 +1313,8 @@
                 { top: '68%', left: '10%', size: '3.4rem', delay: '-0.09s' },
                 { top: '79%', right: '11%', size: '2.2rem', delay: '-0.02s' },
                 { top: '24%', left: '38%', size: '3.8rem', delay: '-0.13s' },
-                { top: '60%', left: '36%', size: '3rem', delay: '-0.07s' },
-                { top: '6%', left: '56%', size: '2.3rem', delay: '-0.05s' },
-                { top: '87%', left: '46%', size: '2.4rem', delay: '-0.1s' }
+                { top: '60%', left: '36%', size: '3rem', delay: '-0.07s' }
             ];
-
             positions.forEach(pos => {
                 const el = document.createElement('div');
                 el.className = 'tini-item';
@@ -2236,7 +1326,6 @@
                 if (pos.right) el.style.right = pos.right;
                 tiniContainer.appendChild(el);
             });
-
             tiniContainer.classList.remove('hidden');
         }
 
@@ -2251,10 +1340,7 @@
             postHoleGif.setAttribute('src', '');
             postHoleGif.setAttribute('src', 'reaction.gif');
             postHoleGifLayer.classList.remove('hidden');
-            requestAnimationFrame(() => {
-                postHoleGifLayer.classList.add('visible');
-            });
-
+            requestAnimationFrame(() => postHoleGifLayer.classList.add('visible'));
             playPostHoleSound();
 
             setTimeout(() => {
@@ -2262,7 +1348,6 @@
                 setTimeout(() => {
                     postHoleGifLayer.classList.add('hidden');
                     missionScene.classList.remove('hidden');
-                    document.title = 'Misiunea TINI ✨';
                 }, 450);
             }, 2400);
         }
@@ -2270,10 +1355,8 @@
         function triggerBlackHole() {
             if (hasTriggeredBlackHole) return;
             hasTriggeredBlackHole = true;
-            isVoid = true;
-
+            stage1Ended = true;
             clearTimeout(duckTimer);
-            clearInterval(titleInterval);
             window.removeEventListener('pointerdown', handleScreenPress);
 
             blackHoleVortex.classList.add('vortex-active');
@@ -2297,67 +1380,40 @@
                 vid.load();
                 sceneWrapper.classList.add('hidden');
                 blackHoleVortex.classList.remove('vortex-active');
-                document.title = '‎';
-
                 showPostHoleGifAndMission();
             }, 1600);
         }
 
-        function startGlitchLoop() {
-            if (isVoid) return;
-            glitchAudio.play().catch(() => {});
-        }
-
         function duckGlitchVolume(durationMs = 1000) {
-            if (isVoid) return;
+            if (stage1Ended) return;
             glitchAudio.volume = DUCK_VOLUME;
             clearTimeout(duckTimer);
             duckTimer = setTimeout(() => {
-                if (clickAudio.paused || clickAudio.ended) {
-                    triggerBlackHole();
-                }
+                if (clickAudio.paused || clickAudio.ended) triggerBlackHole();
             }, durationMs);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            try {
-                localStorage.removeItem('tini_backstage_setlist_v1');
-            } catch (_) {}
+            refreshFragmentsHud();
             vid.play().catch(() => {});
-            startGlitchLoop();
+            glitchAudio.play().catch(() => {});
         });
 
         glitchAudio.addEventListener('pause', () => {
-            if (glitchAudio.loop && !isVoid) {
-                glitchAudio.play().catch(() => {});
-            }
+            if (glitchAudio.loop && !stage1Ended) glitchAudio.play().catch(() => {});
         });
 
-        clickAudio.addEventListener('ended', () => {
-            triggerBlackHole();
-        });
-
-        clickAudio.addEventListener('pause', () => {
-            if (clickAudio.ended) {
-                triggerBlackHole();
-            }
-        });
-
-        clickAudio.addEventListener('error', () => {
-            triggerBlackHole();
-        });
+        clickAudio.addEventListener('ended', triggerBlackHole);
+        clickAudio.addEventListener('error', triggerBlackHole);
 
         function handleScreenPress() {
-            if (isVoid || hasTriggeredBlackHole) return;
-
+            if (stage1Ended || hasTriggeredBlackHole) return;
             ensureAudioContext();
             vid.play().catch(() => {});
-            startGlitchLoop();
-
+            glitchAudio.play().catch(() => {});
             vid.classList.add('bg-glitch-active');
             generateTiniRain();
             restartGifLoop();
-
             duckGlitchVolume(1000);
 
             clickAudio.currentTime = 0;
@@ -2365,905 +1421,640 @@
                 if (!isNaN(clickAudio.duration) && clickAudio.duration > 0) {
                     duckGlitchVolume(clickAudio.duration * 1000);
                 }
-            }).catch(() => {
-                triggerBlackHole();
-            });
+            }).catch(() => triggerBlackHole());
         }
 
         window.addEventListener('pointerdown', handleScreenPress);
 
-        vid.addEventListener('pause', () => {
-            if (!isVoid) {
-                vid.play().catch(() => {});
-            }
-        });
-
+        /* =========================================================
+           QUEST 1: QUIZ EXTINS -> DEBLOCHEAZĂ "909"
+           ========================================================= */
         const quizQuestions = [
-            {
-                question: '¿Cómo se llamaba el personaje que interpreté en Disney?',
-                options: ['Violetta', 'Ámbar', 'Luna', 'Ángela'],
-                correctIndex: 0,
-                badge: '🎤✨',
-                caption: 'Disney Channel • Amintiri',
-                gradient: 'linear-gradient(135deg, rgba(255, 0, 122, 0.35), rgba(110, 0, 255, 0.35))',
-                img: '',
-                note: 'Exact! Violetta a început magia pentru milioane de fani.'
-            },
-            {
-                question: '¿En qué país nací?',
-                options: ['España', 'México', 'Argentina', 'Colombia'],
-                correctIndex: 2,
-                badge: '🇦🇷💫',
-                caption: 'Buenos Aires • Rădăcini',
-                gradient: 'linear-gradient(135deg, rgba(0, 195, 255, 0.35), rgba(255, 255, 255, 0.16))',
-                img: '',
-                note: 'Corect! Născută în Argentina, cu sufletul mereu aproape de casă.'
-            },
-            {
-                question: '¿Cómo se llama mi primer álbum como solista?',
-                options: ['Cupido', 'TINI', 'Quiero Volver', 'Un Mechón de Pelo'],
-                correctIndex: 1,
-                badge: '💿🌟',
-                caption: 'Debut Solo • Era TINI',
-                gradient: 'linear-gradient(135deg, rgba(255, 0, 85, 0.35), rgba(255, 165, 0, 0.25))',
-                img: '',
-                note: 'Super! „TINI” a deschis capitolul ei solo.'
-            },
-            {
-                question: '¿Cómo se llama la canción que interpreté con Sebastián Yatra?',
-                options: ['Fresa', 'Ya No Hay Nadie Que Nos Pare', 'Miénteme', '22'],
-                correctIndex: 1,
-                badge: '🎶❤️',
-                caption: 'Colaborare • Muzică & Emoție',
-                gradient: 'linear-gradient(135deg, rgba(168, 0, 255, 0.35), rgba(0, 240, 255, 0.28))',
-                img: '',
-                note: 'Așa este! „Ya No Hay Nadie Que Nos Pare” este un moment de neuitat.'
-            },
-            {
-                question: '¿En qué año comenzó Violetta?',
-                options: ['2010', '2012', '2014', '2016'],
-                correctIndex: 1,
-                badge: '📅💖',
-                caption: 'Începutul Povestii',
-                gradient: 'linear-gradient(135deg, rgba(255, 65, 135, 0.35), rgba(75, 0, 160, 0.35))',
-                img: '',
-                note: '2012! Anul în care totul a pornit.'
-            },
-            {
-                question: '¿Cómo se llama mi gira de conciertos más reciente?',
-                options: ['Futttura Tour', 'Violetta Live', 'Got Me Started Tour', 'Quiero Volver Tour'],
-                correctIndex: 0,
-                badge: '🏟️✨',
-                caption: 'Pe Scenă • Turneu Actual',
-                gradient: 'linear-gradient(135deg, rgba(0, 240, 255, 0.32), rgba(255, 0, 85, 0.32))',
-                img: '',
-                note: 'Frumoasă amintire! Fiecare concert aduce o energie unică.'
-            }
+            { question: '¿En qué año se estrenó Violetta y qué personaje interpretó Martina Stoessel?', options: ['2012 • Violetta Castillo', '2010 • Ludmila Ferro', '2014 • Francesca Cauvalli', '2011 • Camila Torres'], correctIndex: 0, badge: '🎬🇦🇷', caption: 'Cronologie • Violetta', note: 'Violetta a început în 2012!' },
+            { question: '¿Cuál fue el orden cronológico correcto de estos álbumes de TINI?', options: ['TINI → Quiero Volver → Cupido', 'Quiero Volver → TINI → Cupido', 'Cupido → TINI → Quiero Volver', 'TINI → Cupido → Quiero Volver'], correctIndex: 0, badge: '💿⏳', caption: 'Cronologie Discografică', note: 'Ordinea exactă: TINI (2016), Quiero Volver (2018), Cupido (2023).' },
+            { question: '¿Con qué artista español colaboró TINI en "Un Beso en Madrid"?', options: ['Alejandro Sanz', 'David Bisbal', 'Pablo Alborán', 'Manuel Carrasco'], correctIndex: 0, badge: '🎶✨', caption: 'Colaborare Internațională', note: '„Un Beso en Madrid” este alături de Alejandro Sanz.' },
+            { question: '¿Qué canción reúne a TINI, María Becerra y Lola Índigo?', options: ['High Remix', 'Fresa', '22', 'Oye'], correctIndex: 0, badge: '🔥🎤', caption: 'Colaborări & Hituri', note: '„High Remix” a adus o energie uriașă!' },
+            { question: '¿En qué año lanzó TINI el álbum "Quiero Volver"?', options: ['2016', '2018', '2020', '2022'], correctIndex: 1, badge: '📅💿', caption: 'Discografie', note: '„Quiero Volver” a apărut în 2018.' },
+            { question: '¿Qué tema interpretó TINI en español para la película Frozen?', options: ['Libre Soy', 'Un Poco de Ti', 'Siempre Brillarás', 'Hoy Somos Más'], correctIndex: 0, badge: '❄️👑', caption: 'Disney • Identificare & Voce', note: '„Libre Soy” este versiunea în spaniolă!' },
+            { question: '¿Cómo se llama el álbum conceptual lanzado en 2024 donde TINI habla de su historia personal?', options: ['Un Mechón de Pelo', 'Cupido', 'TINI TINI TINI', 'Quiero Volver'], correctIndex: 0, badge: '🖤📖', caption: 'Discografie Recentă', note: '„Un Mechón de Pelo” este un album profund și personal.' },
+            { question: '¿Qué canción lanzó TINI junto a Sebastián Yatra en 2019?', options: ['Oye', 'Miénteme', 'La Triple T', 'Bar'], correctIndex: 0, badge: '❤️🎵', caption: 'Colaborări Memorabile', note: '„Oye” este una dintre cele mai emoționante piese.' }
         ];
 
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let answered = false;
+        let currentQIndex = 0, score = 0, answered = false;
+
+        function openQuest1() {
+            stopAllAudio();
+            hideAllStages();
+            document.getElementById('quizScene').classList.remove('hidden');
+            document.getElementById('questionBody').classList.remove('hidden');
+            document.getElementById('resultBox').classList.add('hidden');
+            currentQIndex = 0; score = 0;
+            renderQuestion();
+        }
 
         function renderQuestion() {
-            const q = quizQuestions[currentQuestionIndex];
+            const q = quizQuestions[currentQIndex];
             answered = false;
+            document.getElementById('quizCounter').textContent = `Întrebarea ${currentQIndex + 1} / ${quizQuestions.length}`;
+            document.getElementById('quizScore').textContent = `Scor: ${score} / ${quizQuestions.length}`;
+            document.getElementById('progressFill').style.width = `${(currentQIndex / quizQuestions.length) * 100}%`;
+            document.getElementById('questionAnimBadge').textContent = q.badge;
+            document.getElementById('questionVisualCaption').textContent = q.caption;
+            document.getElementById('questionText').textContent = q.question;
 
-            quizCounter.textContent = `Întrebarea ${currentQuestionIndex + 1} / ${quizQuestions.length}`;
-            quizScore.textContent = `Scor: ${score} / ${quizQuestions.length}`;
-            progressFill.style.width = `${(currentQuestionIndex / quizQuestions.length) * 100}%`;
-
-            questionVisual.style.background = q.gradient;
-            if (q.img) {
-                questionImg.src = q.img;
-                questionImg.classList.remove('hidden');
-                questionAnimBadge.classList.add('hidden');
-                questionVisualCaption.classList.add('hidden');
-            } else {
-                questionImg.classList.add('hidden');
-                questionAnimBadge.classList.remove('hidden');
-                questionVisualCaption.classList.remove('hidden');
-                questionAnimBadge.textContent = q.badge;
-                questionVisualCaption.textContent = q.caption;
-            }
-
-            questionText.textContent = q.question;
-            optionsGrid.innerHTML = '';
-            feedbackBox.classList.add('hidden');
-            feedbackText.textContent = '';
+            const grid = document.getElementById('optionsGrid');
+            grid.innerHTML = '';
+            document.getElementById('feedbackBox').classList.add('hidden');
 
             q.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'option-btn';
                 btn.textContent = opt;
-                btn.addEventListener('click', () => handleAnswer(idx, btn));
-                optionsGrid.appendChild(btn);
+                btn.onclick = () => {
+                    if (answered) return;
+                    answered = true;
+                    grid.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+                    if (idx === q.correctIndex) {
+                        score++;
+                        btn.classList.add('correct');
+                        document.getElementById('feedbackText').textContent = `✨ ${q.note}`;
+                        playCorrectSound();
+                    } else {
+                        btn.classList.add('wrong');
+                        grid.querySelectorAll('.option-btn')[q.correctIndex].classList.add('correct');
+                        document.getElementById('feedbackText').textContent = `💫 ${q.note}`;
+                        playWrongSound();
+                    }
+                    document.getElementById('quizScore').textContent = `Scor: ${score} / ${quizQuestions.length}`;
+                    document.getElementById('feedbackBox').classList.remove('hidden');
+                };
+                grid.appendChild(btn);
             });
-
-            playQuestionSound(currentQuestionIndex);
         }
 
-        function handleAnswer(selectedIndex, clickedBtn) {
-            if (answered) return;
-            answered = true;
-
-            const q = quizQuestions[currentQuestionIndex];
-            const allButtons = optionsGrid.querySelectorAll('.option-btn');
-            allButtons.forEach(b => (b.disabled = true));
-
-            if (selectedIndex === q.correctIndex) {
-                score++;
-                clickedBtn.classList.add('correct');
-                feedbackText.textContent = `✨ ${q.note}`;
-                playCorrectSound();
-            } else {
-                clickedBtn.classList.add('wrong');
-                allButtons[q.correctIndex].classList.add('correct');
-                feedbackText.textContent = `💫 Răspunsul era „${q.options[q.correctIndex]}”. ${q.note}`;
-                playWrongSound();
-            }
-
-            quizScore.textContent = `Scor: ${score} / ${quizQuestions.length}`;
-            nextQuestionBtn.textContent = currentQuestionIndex === quizQuestions.length - 1 ? 'Vezi Rezultatul' : 'Următoarea';
-            feedbackBox.classList.remove('hidden');
-        }
-
-        function showResult() {
-            progressFill.style.width = '100%';
-            playCorrectSound();
-
-            if (score === quizQuestions.length) {
-                quizScene.classList.add('hidden');
-                secretCodeScene.classList.remove('hidden');
-                document.title = '090 ✨';
-                return;
-            }
-
-            questionBody.classList.add('hidden');
-            resultBox.classList.remove('hidden');
-
-            if (score >= 4) {
-                resultEmoji.textContent = '🌟🎶';
-                resultTitle.textContent = `${score} / 6 — Super Memorie!`;
-                resultDesc.textContent = 'Cunoști grozav povestea și muzica ei. Încearcă din nou pentru 6 / 6 și codul secret!';
-            } else {
-                resultEmoji.textContent = '✨❤️';
-                resultTitle.textContent = `${score} / 6 — Început Grozav!`;
-                resultDesc.textContent = 'Cel mai important este să te bucuri de amintiri. Mai încearcă o dată!';
-            }
-        }
-
-        function resetQuizToStart() {
-            currentQuestionIndex = 0;
-            score = 0;
-            secretCodeScene.classList.add('hidden');
-            quizScene.classList.remove('hidden');
-            questionBody.classList.remove('hidden');
-            resultBox.classList.add('hidden');
-            renderQuestion();
-        }
-
-        startQuizBtn.addEventListener('click', () => {
-            ensureAudioContext();
-            playCorrectSound();
-            missionScene.classList.add('hidden');
-            quizScene.classList.remove('hidden');
-            currentQuestionIndex = 0;
-            score = 0;
-            questionBody.classList.remove('hidden');
-            resultBox.classList.add('hidden');
-            renderQuestion();
-        });
-
-        nextQuestionBtn.addEventListener('click', () => {
-            if (currentQuestionIndex < quizQuestions.length - 1) {
-                currentQuestionIndex++;
+        document.getElementById('nextQuestionBtn').onclick = () => {
+            if (currentQIndex < quizQuestions.length - 1) {
+                currentQIndex++;
                 renderQuestion();
             } else {
-                showResult();
-            }
-        });
-
-        restartQuizBtn.addEventListener('click', resetQuizToStart);
-
-        /* =========================================================
-           TRANZIȚIA DUPĂ 090: GIF CURAT TINI + VOCEA EI -> BACKSTAGE
-           ========================================================= */
-        function playTiniCleanVoiceAndStartBackstage() {
-            ensureAudioContext();
-            secretCodeScene.classList.add('hidden');
-
-            cleanTiniGif.setAttribute('src', '');
-            cleanTiniGif.setAttribute('src', 'reaction.gif');
-            cleanTiniVoiceLayer.classList.remove('hidden');
-            requestAnimationFrame(() => {
-                cleanTiniVoiceLayer.classList.add('visible');
-            });
-
-            document.title = 'TINI • Backstage ✨';
-
-            let transitioned = false;
-            const goToBackstage = () => {
-                if (transitioned) return;
-                transitioned = true;
-                cleanTiniVoiceLayer.classList.remove('visible');
-                setTimeout(() => {
-                    cleanTiniVoiceLayer.classList.add('hidden');
-                    openBackstageStage('intro');
-                }, 400);
-            };
-
-            tiniVoiceAudio.currentTime = 0;
-            tiniVoiceAudio.onended = goToBackstage;
-            tiniVoiceAudio.play().catch(() => {
-                playTone(523.25, 0.18, 'sine', 0.11, 0);
-                playTone(659.25, 0.22, 'sine', 0.11, 0.16);
-                playTone(783.99, 0.3, 'triangle', 0.12, 0.34);
-                setTimeout(goToBackstage, 1900);
-            });
-
-            setTimeout(goToBackstage, 6000);
-        }
-
-        continueAfterCodeBtn.addEventListener('click', playTiniCleanVoiceAndStartBackstage);
-
-        /* =========================================================
-           ETAPA 2: BACKSTAGE — THE MISSING SETLIST
-           ========================================================= */
-        const backstageStage = document.getElementById('backstageStage');
-        const bsProgressBadge = document.getElementById('bsProgressBadge');
-        const bsMusicToggleBtn = document.getElementById('bsMusicToggleBtn');
-        const bsIntroScreen = document.getElementById('bsIntroScreen');
-        const bsEnterRoomBtn = document.getElementById('bsEnterRoomBtn');
-        const bsRoomScreen = document.getElementById('bsRoomScreen');
-        const bsRoomPrompt = document.getElementById('bsRoomPrompt');
-        const bsFinalScreen = document.getElementById('bsFinalScreen');
-        const bsContinueFinalBtn = document.getElementById('bsContinueFinalBtn');
-
-        const bsIntroSprite = document.getElementById('bsIntroSprite');
-        const bsRoomSprite = document.getElementById('bsRoomSprite');
-        const bsFinalSprite = document.getElementById('bsFinalSprite');
-
-        const bsChallengeModal = document.getElementById('bsChallengeModal');
-        const bsChallengeObjectLabel = document.getElementById('bsChallengeObjectLabel');
-        const bsChallengeEmojis = document.getElementById('bsChallengeEmojis');
-        const bsChallengePrompt = document.getElementById('bsChallengePrompt');
-        const bsChallengeOptions = document.getElementById('bsChallengeOptions');
-        const bsChallengeFeedback = document.getElementById('bsChallengeFeedback');
-        const bsCloseChallengeBtn = document.getElementById('bsCloseChallengeBtn');
-
-        const backstageIntroVoice = document.getElementById('backstageIntroVoice');
-        const backstageFinalVoice = document.getElementById('backstageFinalVoice');
-        const backstageAmbientMusic = document.getElementById('backstageAmbientMusic');
-
-        const BACKSTAGE_CHALLENGES = {
-            mic: {
-                id: 'mic',
-                label: 'OBIECT • MICROFON',
-                emojis: '🏹❤️',
-                songTitle: 'CUPIDO',
-                prompt: 'Microfonul are un indiciu cu emoji-uri. Ce melodie TINI este?',
-                options: ['CUPIDO', 'MIÉNTEME', 'FRESA', 'LA TRIPLE T']
-            },
-            journal: {
-                id: 'journal',
-                label: 'OBIECT • JURNAL',
-                emojis: '🤥💔',
-                songTitle: 'MIÉNTEME',
-                prompt: 'O pagină din jurnal ascunde acest puzzle. Care este melodia?',
-                options: ['FRESA', 'MIÉNTEME', 'CUPIDO', 'LA TRIPLE T']
-            },
-            photo: {
-                id: 'photo',
-                label: 'OBIECT • FOTOGRAFIE',
-                emojis: '🍓',
-                songTitle: 'FRESA',
-                prompt: 'Fotografia are o singură emoji-amprentă dulce. Ghicește titlul:',
-                options: ['LA TRIPLE T', 'CUPIDO', 'MIÉNTEME', 'FRESA']
-            },
-            headphones: {
-                id: 'headphones',
-                label: 'OBIECT • CĂȘTI',
-                emojis: '🇹🇹🇹',
-                songTitle: 'LA TRIPLE T',
-                prompt: 'Căștile redau un indiciu cu trei litere. Ce melodie este?',
-                options: ['FRESA', 'LA TRIPLE T', 'MIÉNTEME', 'CUPIDO']
+                document.getElementById('progressFill').style.width = '100%';
+                if (score >= 6) {
+                    completeQuestAndShowFragment('q1', () => {
+                        const layer = document.getElementById('cleanTiniVoiceLayer');
+                        layer.classList.remove('hidden');
+                        requestAnimationFrame(() => layer.classList.add('visible'));
+                        tiniVoiceAudio.currentTime = 0;
+                        tiniVoiceAudio.play().catch(() => {});
+                        setTimeout(() => {
+                            layer.classList.remove('visible');
+                            setTimeout(() => {
+                                layer.classList.add('hidden');
+                                openQuest2('intro');
+                            }, 400);
+                        }, 2200);
+                    });
+                } else {
+                    document.getElementById('questionBody').classList.add('hidden');
+                    document.getElementById('resultBox').classList.remove('hidden');
+                    document.getElementById('resultTitle').textContent = `${score} / ${quizQuestions.length} — Mai încearcă!`;
+                    document.getElementById('resultDesc').textContent = 'Ai nevoie de cel puțin 6/8 răspunsuri corecte pentru a trece mai departe.';
+                }
             }
         };
 
-        let backstageState = {
-            screen: 'intro',
-            solved: {
-                mic: false,
-                journal: false,
-                photo: false,
-                headphones: false
-            },
-            musicMuted: false
+        document.getElementById('restartQuizBtn').onclick = () => {
+            currentQIndex = 0; score = 0;
+            document.getElementById('resultBox').classList.add('hidden');
+            document.getElementById('questionBody').classList.remove('hidden');
+            renderQuestion();
         };
 
-        let activeChallengeId = null;
-        let ambientSynthInterval = null;
-
-        function getSolvedCount() {
-            return Object.values(backstageState.solved).filter(Boolean).length;
-        }
-
-        function updateBackstageUI() {
-            const count = getSolvedCount();
-            bsProgressBadge.textContent = `${count}/4`;
-            bsMusicToggleBtn.textContent = backstageState.musicMuted ? 'Muzică: OFF' : 'Muzică: ON';
-
-            Object.keys(BACKSTAGE_CHALLENGES).forEach(key => {
-                const item = BACKSTAGE_CHALLENGES[key];
-                const btn = document.getElementById(`obj-${key}`);
-                const statusEl = document.querySelector(`[data-status-for="${key}"]`);
-                const slotEl = document.querySelector(`[data-slot-id="${key}"]`);
-                const isSolved = backstageState.solved[key];
-
-                if (btn) btn.classList.toggle('solved', isSolved);
-                if (statusEl) statusEl.textContent = isSolved ? `Recuperată: ${item.songTitle}` : 'Apasă pentru indiciu';
-                if (slotEl) {
-                    slotEl.classList.toggle('found', isSolved);
-                    slotEl.textContent = isSolved ? `${item.songTitle}` : '???';
-                }
-            });
-
-            bsIntroScreen.classList.toggle('hidden', backstageState.screen !== 'intro');
-            bsRoomScreen.classList.toggle('hidden', backstageState.screen !== 'room');
-            bsFinalScreen.classList.toggle('hidden', backstageState.screen !== 'final');
-
-            if (backstageState.screen === 'final') {
-                document.title = '8-TI ✨';
-            }
-        }
-
-        function startAmbientMusic() {
-            if (backstageState.musicMuted) {
-                stopAmbientMusic();
-                return;
-            }
-
-            backstageAmbientMusic.volume = 0.22;
-            backstageAmbientMusic.play().catch(() => {
-                if (!ambientSynthInterval) {
-                    const notes = [261.63, 329.63, 392.0, 493.88];
-                    let idx = 0;
-                    ambientSynthInterval = setInterval(() => {
-                        if (backstageState.musicMuted || backstageStage.classList.contains('hidden')) return;
-                        playTone(notes[idx % notes.length], 0.45, 'sine', 0.025, 0);
-                        idx++;
-                    }, 900);
-                }
-            });
-        }
-
-        function stopAmbientMusic() {
-            backstageAmbientMusic.pause();
-            if (ambientSynthInterval) {
-                clearInterval(ambientSynthInterval);
-                ambientSynthInterval = null;
-            }
-        }
-
-        function speakIntroSpanish() {
-            bsIntroSprite.classList.add('talking');
-            backstageIntroVoice.currentTime = 0;
-            backstageIntroVoice.onended = () => {
-                bsIntroSprite.classList.remove('talking');
-            };
-            backstageIntroVoice.play().catch(() => {
-                setTimeout(() => bsIntroSprite.classList.remove('talking'), 2600);
-            });
-        }
-
-        function speakFinalSpanish() {
-            bsFinalSprite.classList.add('talking', 'happy');
-            backstageFinalVoice.currentTime = 0;
-            backstageFinalVoice.onended = () => {
-                bsFinalSprite.classList.remove('talking');
-            };
-            backstageFinalVoice.play().catch(() => {
-                setTimeout(() => bsFinalSprite.classList.remove('talking'), 2400);
-            });
-        }
-
-        function stopStage1Media() {
-            isVoid = true;
-            clearTimeout(duckTimer);
-            clearInterval(titleInterval);
-            glitchAudio.loop = false;
-            glitchAudio.pause();
-            clickAudio.pause();
-            afterHoleAudio.pause();
-            vid.pause();
-        }
-
-        function openBackstageStage(targetScreen) {
-            stopStage1Media();
-            finalConcertStage.classList.add('hidden');
-
-            sceneWrapper.classList.add('hidden');
-            postHoleGifLayer.classList.add('hidden');
-            missionScene.classList.add('hidden');
-            quizScene.classList.add('hidden');
-            secretCodeScene.classList.add('hidden');
-            cleanTiniVoiceLayer.classList.add('hidden');
-            blackHoleVortex.classList.remove('vortex-active');
-
-            backstageState.screen = targetScreen || backstageState.screen || 'intro';
-            backstageStage.classList.remove('hidden');
-            document.title = backstageState.screen === 'final' ? '8-TI ✨' : 'BACKSTAGE: THE MISSING SETLIST ✨';
-
-            updateBackstageUI();
-            startAmbientMusic();
-
-            if (backstageState.screen === 'intro') {
-                speakIntroSpanish();
-            } else if (backstageState.screen === 'final') {
-                speakFinalSpanish();
-            }
-        }
-
-        function openChallengeModal(objId) {
-            const item = BACKSTAGE_CHALLENGES[objId];
-            if (!item) return;
-
-            activeChallengeId = objId;
-            bsChallengeObjectLabel.textContent = item.label;
-            bsChallengeEmojis.textContent = item.emojis;
-            bsChallengePrompt.textContent = item.prompt;
-            bsChallengeFeedback.textContent = '';
-            bsChallengeFeedback.style.color = '#ffffff';
-            bsChallengeOptions.innerHTML = '';
-
-            item.options.forEach(optionTitle => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'option-btn';
-                btn.textContent = optionTitle;
-                btn.addEventListener('click', () => handleChallengeChoice(optionTitle, btn));
-                bsChallengeOptions.appendChild(btn);
-            });
-
-            bsChallengeModal.classList.remove('hidden');
-            playQuestionSound(Object.keys(BACKSTAGE_CHALLENGES).indexOf(objId));
-        }
-
-        function handleChallengeChoice(chosenTitle, btnEl) {
-            const item = BACKSTAGE_CHALLENGES[activeChallengeId];
-            if (!item) return;
-
-            if (chosenTitle === item.songTitle) {
-                btnEl.classList.add('correct');
-                bsChallengeFeedback.style.color = '#6effbe';
-                bsChallengeFeedback.textContent = `✨ ¡Corect! Ai recuperat „${item.songTitle}”.`;
-                playCorrectSound();
-
-                const allBtns = bsChallengeOptions.querySelectorAll('.option-btn');
-                allBtns.forEach(b => (b.disabled = true));
-
-                backstageState.solved[activeChallengeId] = true;
-                updateBackstageUI();
-
-                bsRoomSprite.classList.add('happy');
-                bsRoomPrompt.textContent = `Ai găsit „${item.songTitle}” (${getSolvedCount()}/4)!`;
-                setTimeout(() => bsRoomSprite.classList.remove('happy'), 900);
-
-                setTimeout(() => {
-                    bsChallengeModal.classList.add('hidden');
-                    activeChallengeId = null;
-
-                    if (getSolvedCount() === 4) {
-                        backstageState.screen = 'final';
-                        updateBackstageUI();
-                        speakFinalSpanish();
-                    }
-                }, 900);
-            } else {
-                btnEl.classList.add('wrong');
-                bsChallengeFeedback.style.color = '#ff85a6';
-                bsChallengeFeedback.textContent = 'Încearcă din nou — doar răspunsul corect deblochează melodia!';
-                playWrongSound();
-            }
-        }
-
-        bsEnterRoomBtn.addEventListener('click', () => {
+        document.getElementById('startQuizBtn').onclick = () => {
             ensureAudioContext();
-            backstageIntroVoice.pause();
-            bsIntroSprite.classList.remove('talking');
             playCorrectSound();
-            backstageState.screen = 'room';
-            updateBackstageUI();
-            startAmbientMusic();
-        });
+            openQuest1();
+        };
+
+        document.getElementById('continueAfterCodeBtn').onclick = () => {
+            document.getElementById('secretCodeScene').classList.add('hidden');
+            if (typeof pendingAfterFragmentAction === 'function') {
+                const fn = pendingAfterFragmentAction;
+                pendingAfterFragmentAction = null;
+                fn();
+            }
+        };
+
+        /* =========================================================
+           QUEST 2: BACKSTAGE (6 OBIECTE) -> DEBLOCHEAZĂ "35-"
+           ========================================================= */
+        const bsChallenges = {
+            mic: { tag: 'MICROFON • EMOJI CHALLENGE', visual: '🏹❤️', prompt: 'Ce piesă TINI este reprezentată de aceste emoji-uri?', options: ['CUPIDO', 'MIÉNTEME', 'FRESA'], answer: 'CUPIDO', soundFreq: 523.25 },
+            journal: { tag: 'JURNAL • LOGIC RIDDLE', visual: '📖❓', prompt: 'Dacă „Violetta” a început în 2012 și „Cupido” a apărut în 2023, câți ani au trecut?', options: ['11 ani', '9 ani', '13 ani'], answer: '11 ani', soundFreq: 587.33 },
+            photo: { tag: 'FOTOGRAFIE • SONG CLUE', visual: '🍓✨', prompt: 'Un indiciu dulce de pe scena solo. Care este melodia?', options: ['LA TRIPLE T', 'FRESA', '22'], answer: 'FRESA', soundFreq: 659.25 },
+            headphones: { tag: 'CĂȘTI • AUDIO CLUE', visual: '🔊🎶', prompt: 'Ascultă tonul de studio și alege piesa ritmată cu 3 litere:', options: ['LA TRIPLE T', 'OYE', 'BAR'], answer: 'LA TRIPLE T', soundFreq: 783.99 },
+            costume: { tag: 'COSTUM • CHRONOLOGY', visual: '1️⃣ → 2️⃣ → 3️⃣', prompt: 'Alege ordinea cronologică: Violetta (2012), Quiero Volver (2018), Cupido (2023).', options: ['Violetta → Quiero Volver → Cupido', 'Cupido → Violetta → Quiero Volver', 'Quiero Volver → Cupido → Violetta'], answer: 'Violetta → Quiero Volver → Cupido', soundFreq: 698.46 },
+            award: { tag: 'TROFEU • SEQUENCE LOGIC', visual: '🏆⭐', prompt: 'Completează secvența de piese: „Miénteme” + „La Triple T” + ...', options: ['Cupido', 'En Mi Mundo', 'Te Creo'], answer: 'Cupido', soundFreq: 880.0 }
+        };
+
+        let bsSolved = { mic: false, journal: false, photo: false, headphones: false, costume: false, award: false };
+
+        function openQuest2(subscreen = 'room') {
+            stopAllAudio();
+            hideAllStages();
+            document.getElementById('backstageStage').classList.remove('hidden');
+            document.getElementById('bsIntroScreen').classList.toggle('hidden', subscreen !== 'intro');
+            document.getElementById('bsRoomScreen').classList.toggle('hidden', subscreen !== 'room');
+
+            const ambient = document.getElementById('backstageAmbientMusic');
+            ambient.volume = 0.22;
+            ambient.play().catch(() => {});
+
+            if (subscreen === 'intro') {
+                const v = document.getElementById('backstageIntroVoice');
+                v.currentTime = 0;
+                v.play().catch(() => {});
+            }
+        }
+
+        document.getElementById('bsEnterRoomBtn').onclick = () => {
+            document.getElementById('backstageIntroVoice').pause();
+            document.getElementById('bsIntroScreen').classList.add('hidden');
+            document.getElementById('bsRoomScreen').classList.remove('hidden');
+            playCorrectSound();
+        };
 
         document.querySelectorAll('.bs-object-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const objId = btn.getAttribute('data-object-id');
-                openChallengeModal(objId);
-            });
+            btn.onclick = () => {
+                const id = btn.getAttribute('data-object-id');
+                const ch = bsChallenges[id];
+                document.getElementById('bsChallengeObjTag').textContent = ch.tag;
+                document.getElementById('bsChallengeVisual').textContent = ch.visual;
+                document.getElementById('bsChallengePrompt').textContent = ch.prompt;
+                document.getElementById('bsChallengeFeedback').textContent = '';
+
+                playTone(ch.soundFreq, 0.2, 'triangle', 0.12, 0);
+                playTone(ch.soundFreq * 1.25, 0.22, 'sine', 0.1, 0.12);
+
+                const optsEl = document.getElementById('bsChallengeOptions');
+                optsEl.innerHTML = '';
+                ch.options.forEach(opt => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'option-btn';
+                    b.textContent = opt;
+                    b.onclick = () => {
+                        if (opt === ch.answer) {
+                            b.classList.add('correct');
+                            bsSolved[id] = true;
+                            document.getElementById('obj-' + id).classList.add('solved');
+                            document.getElementById('bsChallengeFeedback').style.color = '#6effbe';
+                            document.getElementById('bsChallengeFeedback').textContent = '✨ ¡Correcto! Provocare rezolvată!';
+                            playCorrectSound();
+                            const count = Object.values(bsSolved).filter(Boolean).length;
+                            document.getElementById('bsProgressBadge').textContent = `${count}/6`;
+                            if (count === 6) {
+                                document.getElementById('bsToMemoriesBtn').classList.remove('hidden');
+                            }
+                            setTimeout(() => document.getElementById('bsChallengeModal').classList.add('hidden'), 750);
+                        } else {
+                            b.classList.add('wrong');
+                            document.getElementById('bsChallengeFeedback').style.color = '#ff85a6';
+                            document.getElementById('bsChallengeFeedback').textContent = 'Încearcă din nou!';
+                            playWrongSound();
+                        }
+                    };
+                    optsEl.appendChild(b);
+                });
+                document.getElementById('bsChallengeModal').classList.remove('hidden');
+            };
         });
 
-        bsCloseChallengeBtn.addEventListener('click', () => {
-            bsChallengeModal.classList.add('hidden');
-            activeChallengeId = null;
-        });
-
-        bsMusicToggleBtn.addEventListener('click', () => {
-            ensureAudioContext();
-            backstageState.musicMuted = !backstageState.musicMuted;
-            updateBackstageUI();
-            if (backstageState.musicMuted) {
-                stopAmbientMusic();
-            } else {
-                startAmbientMusic();
-            }
-        });
-
-        bsContinueFinalBtn.addEventListener('click', () => {
-            ensureAudioContext();
-            playCorrectSound();
-            openFinalConcertStage('unlock');
-        });
-
-        /* =========================================================
-           ETAPA 3: FINAL EXPERIENCE – KRISS, THIS IS YOUR NIGHT
-           ========================================================= */
-        const finalConcertStage = document.getElementById('finalConcertStage');
-        const feUnlockScreen = document.getElementById('feUnlockScreen');
-        const feCodeInput = document.getElementById('feCodeInput');
-        const feCodeError = document.getElementById('feCodeError');
-        const feUnlockBtn = document.getElementById('feUnlockBtn');
-
-        const feIntroScreen = document.getElementById('feIntroScreen');
-        const feIntroSprite = document.getElementById('feIntroSprite');
-        const feStartOpeningBtn = document.getElementById('feStartOpeningBtn');
-
-        const feOpeningScreen = document.getElementById('feOpeningScreen');
-        const openingStageGlow = document.getElementById('openingStageGlow');
-        const openingStatus = document.getElementById('openingStatus');
-        const openingCountdown = document.getElementById('openingCountdown');
-        const openingRevealTitle = document.getElementById('openingRevealTitle');
-
-        const feConcertScreen = document.getElementById('feConcertScreen');
-        const concertShell = document.getElementById('concertShell');
-        const actKicker = document.getElementById('actKicker');
-        const actTitle = document.getElementById('actTitle');
-        const screenFrame = document.getElementById('screenFrame');
-        const mediaLoader = document.getElementById('mediaLoader');
-        const actVideo = document.getElementById('actVideo');
-        const actPhotoFallback = document.getElementById('actPhotoFallback');
-        const nowPlayingActTag = document.getElementById('nowPlayingActTag');
-        const nowPlayingSongTitle = document.getElementById('nowPlayingSongTitle');
-
-        const togglePlayPauseBtn = document.getElementById('togglePlayPauseBtn');
-        const fullscreenVideoBtn = document.getElementById('fullscreenVideoBtn');
-        const finishConcertBtn = document.getElementById('finishConcertBtn');
-        const concertVolumeRange = document.getElementById('concertVolumeRange');
-        const concertVolumeLabel = document.getElementById('concertVolumeLabel');
-
-        const concertIntroVoice = document.getElementById('concertIntroVoice');
-        const crowdCheeringAudio = document.getElementById('crowdCheeringAudio');
-        const concertMusicAudio = document.getElementById('concertMusicAudio');
-
-        const feFinalScreen = document.getElementById('feFinalScreen');
-        const oneLastThingText = document.getElementById('oneLastThingText');
-        const finalVideoWrap = document.getElementById('finalVideoWrap');
-        const finalVideoPlayer = document.getElementById('finalVideoPlayer');
-        const vipTicketCard = document.getElementById('vipTicketCard');
-        const personalMessageCard = document.getElementById('personalMessageCard');
-
-        const ACT_1 = {
-            id: 'act-1',
-            shellClass: 'act-1',
-            kicker: 'ACT I – VIOLETTA',
-            title: 'DONDE TODO COMENZÓ',
-            songLabel: 'ACT I – VIOLETTA • DONDE TODO COMENZÓ',
-            videoSrc: 'act1_violetta.mp4',
-            photoSrc: 'act1_violetta.jpg',
-            musicSrc: 'act1_music.mp3',
-            fallbackFreq: 440
+        document.getElementById('bsCloseChallengeBtn').onclick = () => {
+            document.getElementById('bsChallengeModal').classList.add('hidden');
         };
 
-        let isConcertPlaying = true;
-        let concertVolume = 0.85;
-        let beatPulseInterval = null;
-        let concertSynthInterval = null;
-        let countdownInterval = null;
+        document.getElementById('bsMusicToggleBtn').onclick = () => {
+            const amb = document.getElementById('backstageAmbientMusic');
+            if (amb.paused) {
+                amb.play().catch(() => {});
+                document.getElementById('bsMusicToggleBtn').textContent = 'Muzică: ON';
+            } else {
+                amb.pause();
+                document.getElementById('bsMusicToggleBtn').textContent = 'Muzică: OFF';
+            }
+        };
 
-        function playConcertIntroVoice() {
-            if (!feIntroSprite) return;
-            feIntroSprite.classList.add('talking');
-            concertIntroVoice.currentTime = 0;
-            concertIntroVoice.onended = () => feIntroSprite.classList.remove('talking');
-            concertIntroVoice.play().catch(() => {
-                setTimeout(() => feIntroSprite.classList.remove('talking'), 3200);
+        document.getElementById('bsToMemoriesBtn').onclick = () => {
+            completeQuestAndShowFragment('q2', () => openQuest3());
+        };
+
+        /* =========================================================
+           QUEST 3: LOST MEMORIES (12 PERECHI) -> DEBLOCHEAZĂ "KRISS"
+           ========================================================= */
+        const memPairsData = [
+            { id: 'violetta', label: 'Violetta' },
+            { id: 'cupido', label: 'Cupido' },
+            { id: 'fresa', label: 'Fresa' },
+            { id: 'mienteme', label: 'Miénteme' },
+            { id: 'triplet', label: 'La Triple T' },
+            { id: 'quierovolver', label: 'Quiero Volver' },
+            { id: 'tini', label: 'TINI (2016)' },
+            { id: 'mechon', label: 'Un Mechón' },
+            { id: 'oye', label: 'Oye' },
+            { id: 'argentina', label: 'Buenos Aires' },
+            { id: 'futttura', label: 'Futttura' },
+            { id: 'libresoy', label: 'Libre Soy' }
+        ];
+
+        let memFlipped = [], memMatched = 0, memScore = 0, memSeconds = 0, memTimerId = null;
+
+        function openQuest3() {
+            stopAllAudio();
+            hideAllStages();
+            document.getElementById('memoriesStage').classList.remove('hidden');
+
+            memFlipped = []; memMatched = 0; memScore = 0; memSeconds = 0;
+            document.getElementById('memPairsLabel').textContent = 'Perechi: 0 / 12';
+            document.getElementById('memScoreLabel').textContent = 'Punctaj: 0';
+            document.getElementById('memTimerLabel').textContent = 'Timp: 00s';
+            document.getElementById('memFeedback').textContent = '';
+            document.getElementById('memToTransmissionBtn').classList.add('hidden');
+
+            clearInterval(memTimerId);
+            memTimerId = setInterval(() => {
+                memSeconds++;
+                document.getElementById('memTimerLabel').textContent = `Timp: ${String(memSeconds).padStart(2, '0')}s`;
+            }, 1000);
+
+            const deck = [...memPairsData, ...memPairsData].sort(() => Math.random() - 0.5);
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = '';
+
+            deck.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'mem-card';
+                card.innerHTML = `<div class="mem-face mem-front">TINI</div><div class="mem-face mem-back">${item.label}</div>`;
+                card.onclick = () => {
+                    if (card.classList.contains('flipped') || card.classList.contains('matched') || memFlipped.length >= 2) return;
+                    card.classList.add('flipped');
+                    playTone(540, 0.08, 'sine', 0.08, 0);
+                    memFlipped.push({ card, id: item.id });
+
+                    if (memFlipped.length === 2) {
+                        if (memFlipped[0].id === memFlipped[1].id) {
+                            memFlipped.forEach(c => c.card.classList.add('matched'));
+                            memMatched++;
+                            memScore += 100;
+                            playCorrectSound();
+                            document.getElementById('memPairsLabel').textContent = `Perechi: ${memMatched} / 12`;
+                            document.getElementById('memScoreLabel').textContent = `Punctaj: ${memScore}`;
+                            document.getElementById('memFeedback').textContent = `✨ Pereche potrivită: ${item.label}!`;
+                            memFlipped = [];
+
+                            if (memMatched === 12) {
+                                clearInterval(memTimerId);
+                                document.getElementById('memFeedback').textContent = '🎉 Toate cele 12 perechi au fost găsite!';
+                                document.getElementById('memToTransmissionBtn').classList.remove('hidden');
+                            }
+                        } else {
+                            memScore = Math.max(0, memScore - 15);
+                            document.getElementById('memScoreLabel').textContent = `Punctaj: ${memScore}`;
+                            playWrongSound();
+                            setTimeout(() => {
+                                memFlipped.forEach(c => c.card.classList.remove('flipped'));
+                                memFlipped = [];
+                            }, 750);
+                        }
+                    }
+                };
+                grid.appendChild(card);
             });
         }
 
-        function openFinalConcertStage(screenName = 'unlock') {
-            stopStage1Media();
-            stopAmbientMusic();
-            backstageIntroVoice.pause();
-            backstageFinalVoice.pause();
-            tiniVoiceAudio.pause();
-            concertIntroVoice.pause();
+        document.getElementById('memToTransmissionBtn').onclick = () => {
+            completeQuestAndShowFragment('q3', () => openTransmissionStage());
+        };
 
-            sceneWrapper.classList.add('hidden');
-            postHoleGifLayer.classList.add('hidden');
-            missionScene.classList.add('hidden');
-            quizScene.classList.add('hidden');
-            secretCodeScene.classList.add('hidden');
-            cleanTiniVoiceLayer.classList.add('hidden');
-            backstageStage.classList.add('hidden');
-            bsChallengeModal.classList.add('hidden');
+        /* =========================================================
+           CODUL FINAL MANUAL: 90935-KRISS
+           ========================================================= */
+        let typedCode = "";
+        const manualCodeInput = document.getElementById('manualCodeInput');
 
-            finalConcertStage.classList.remove('hidden');
-            feUnlockScreen.classList.toggle('hidden', screenName !== 'unlock');
-            feIntroScreen.classList.toggle('hidden', screenName !== 'intro');
-            feOpeningScreen.classList.toggle('hidden', screenName !== 'opening');
-            feConcertScreen.classList.toggle('hidden', screenName !== 'concert');
-            feFinalScreen.classList.toggle('hidden', screenName !== 'final');
-
-            document.title = 'KRISS, THIS IS YOUR NIGHT ✨';
-
-            if (screenName === 'intro') {
-                playConcertIntroVoice();
-            }
+        function openTransmissionStage() {
+            stopAllAudio();
+            hideAllStages();
+            refreshFragmentsHud();
+            typedCode = "";
+            if (manualCodeInput) manualCodeInput.value = "";
+            updateVirtualCode();
+            document.getElementById('transmissionFeedback').textContent = '';
+            document.getElementById('transmissionStage').classList.remove('hidden');
         }
 
-        function handleUnlockCodeSubmit() {
-            const entered = (feCodeInput.value || '').trim().toUpperCase();
-            if (entered === '0908-TINI') {
-                feCodeError.textContent = '';
-                playCorrectSound();
-                feUnlockScreen.classList.add('hidden');
-                feIntroScreen.classList.remove('hidden');
-                playConcertIntroVoice();
-            } else {
-                feCodeError.textContent = 'Ese código no es correcto. ¡Inténtalo otra vez!';
-                playWrongSound();
-            }
+        function updateVirtualCode() {
+            const activeVal = (manualCodeInput && manualCodeInput.value.trim())
+                ? manualCodeInput.value.trim().toUpperCase()
+                : typedCode;
+            document.getElementById('virtualCodeDisplay').textContent = (activeVal || '').padEnd(11, '_');
         }
 
-        feUnlockBtn.addEventListener('click', handleUnlockCodeSubmit);
-        feCodeInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') handleUnlockCodeSubmit();
+        if (manualCodeInput) {
+            manualCodeInput.addEventListener('input', () => {
+                typedCode = manualCodeInput.value.toUpperCase().slice(0, 11);
+                manualCodeInput.value = typedCode;
+                updateVirtualCode();
+            });
+            manualCodeInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    document.getElementById('transmissionConfirmBtn').click();
+                }
+            });
+        }
+
+        document.querySelectorAll('.vkey-btn').forEach(btn => {
+            btn.onclick = () => {
+                const k = btn.getAttribute('data-key');
+                playTone(620, 0.07, 'triangle', 0.08, 0);
+                if (k === 'CLR') {
+                    typedCode = typedCode.slice(0, -1);
+                } else if (typedCode.length < 11) {
+                    typedCode += k;
+                }
+                if (manualCodeInput) manualCodeInput.value = typedCode;
+                updateVirtualCode();
+            };
         });
 
-        function startConcertSynthFallback(baseFreq) {
-            stopConcertSynthFallback();
-            let stepNote = 0;
-            const intervals = [1, 1.25, 1.5, 1.25];
-            concertSynthInterval = setInterval(() => {
-                if (!isConcertPlaying || feConcertScreen.classList.contains('hidden')) return;
-                const gain = Math.max(0.005, concertVolume * 0.045);
-                playTone(baseFreq * intervals[stepNote % intervals.length], 0.36, 'triangle', gain, 0);
-                stepNote++;
-            }, 620);
-        }
+        document.getElementById('transmissionConfirmBtn').onclick = () => {
+            const enteredCode = ((manualCodeInput && manualCodeInput.value) ? manualCodeInput.value : typedCode)
+                .trim()
+                .toUpperCase();
 
-        function stopConcertSynthFallback() {
-            if (concertSynthInterval) {
-                clearInterval(concertSynthInterval);
-                concertSynthInterval = null;
+            if (enteredCode === FINAL_SECRET_CODE) {
+                playCorrectSound();
+                openConcertStage('unlock');
+            } else {
+                playWrongSound();
+                document.getElementById('transmissionFeedback').textContent = 'Cod incorect. Introdu exact codul 90935-KRISS.';
+            }
+        };
+
+        /* =========================================================
+           ETAPA 5-7: MESAJ EXACT + 5s COUNTDOWN + 3 ACTE CONCERT + FINAL
+           ========================================================= */
+        const CONCERT_ACTS = [
+            {
+                kicker: 'ACT I — VIOLETTA',
+                title: 'DONDE TODO COMENZÓ',
+                intro: 'Atmosferă nostalgică: începuturile carierei și magia primelor vise.',
+                video: 'act1_violetta.mp4',
+                photo: 'act1_violetta.jpg',
+                music: 'act1_music.mp3',
+                bg: 'linear-gradient(160deg, #240938 0%, #140522 100%)',
+                freq: 440
+            },
+            {
+                kicker: 'ACT II — TINI',
+                title: 'QUIERO VOLVER & CUPIDO',
+                intro: 'Perioada solo: energie, ritm și lumini vibrante.',
+                video: 'act2_tini.mp4',
+                photo: 'act2_tini.jpg',
+                music: 'act2_music.mp3',
+                bg: 'linear-gradient(160deg, #1b0a3d 0%, #2b092b 100%)',
+                freq: 523.25
+            },
+            {
+                kicker: 'ACT III — FUTTTURA',
+                title: 'LA NOCHE FUTTTURA',
+                intro: 'Final spectaculos: lumini roz și violet, atmosferă de mare concert.',
+                video: 'act3_futttura.mp4',
+                photo: 'act3_futttura.jpg',
+                music: 'act3_music.mp3',
+                bg: 'linear-gradient(160deg, #2e0738 0%, #110424 100%)',
+                freq: 587.33
+            }
+        ];
+
+        let actIdx = 0;
+        let isPlayingAct = true;
+        let concertVol = 0.85;
+        let countdownTimer = null;
+        let concertFallbackTimer = null;
+
+        function openConcertStage(screen = 'unlock') {
+            stopAllAudio();
+            hideAllStages();
+            document.getElementById('finalConcertStage').classList.remove('hidden');
+            document.getElementById('feUnlockScreen').classList.toggle('hidden', screen !== 'unlock');
+            document.getElementById('feOpeningScreen').classList.toggle('hidden', screen !== 'opening');
+            document.getElementById('feConcertScreen').classList.toggle('hidden', screen !== 'concert');
+            document.getElementById('feFinalScreen').classList.toggle('hidden', screen !== 'final');
+
+            if (screen === 'unlock') {
+                const v = document.getElementById('concertIntroVoice');
+                v.currentTime = 0;
+                v.play().catch(() => {});
             }
         }
 
-        function startBeatSyncVisuals() {
-            if (beatPulseInterval) clearInterval(beatPulseInterval);
-            beatPulseInterval = setInterval(() => {
-                if (!isConcertPlaying || feConcertScreen.classList.contains('hidden')) return;
-                actPhotoFallback.classList.add('beat-pulse');
-                setTimeout(() => actPhotoFallback.classList.remove('beat-pulse'), 220);
-            }, 520);
-        }
-
-        function loadConcertAct1(autoPlay = true) {
-            concertShell.classList.add(ACT_1.shellClass);
-            actKicker.textContent = ACT_1.kicker;
-            actTitle.textContent = ACT_1.title;
-            nowPlayingActTag.textContent = ACT_1.kicker;
-            nowPlayingSongTitle.textContent = ACT_1.title;
-
-            mediaLoader.classList.remove('hidden');
-
-            actPhotoFallback.src = ACT_1.photoSrc;
-            actPhotoFallback.onerror = () => {
-                actPhotoFallback.removeAttribute('src');
-            };
-
-            actVideo.src = ACT_1.videoSrc;
-            actVideo.onloadeddata = () => {
-                mediaLoader.classList.add('hidden');
-            };
-            actVideo.onerror = () => {
-                mediaLoader.classList.add('hidden');
-            };
-
-            if (autoPlay) {
-                actVideo.play().catch(() => {});
-            }
-
-            concertMusicAudio.src = ACT_1.musicSrc;
-            concertMusicAudio.volume = concertVolume;
-            concertMusicAudio.currentTime = 0;
-
-            concertMusicAudio.oncanplay = () => {
-                mediaLoader.classList.add('hidden');
-            };
-
-            concertMusicAudio.onended = () => {
-                triggerFinalMoment();
-            };
-
-            concertMusicAudio.onerror = () => {
-                mediaLoader.classList.add('hidden');
-                if (isConcertPlaying) startConcertSynthFallback(ACT_1.fallbackFreq);
-            };
-
-            if (autoPlay && isConcertPlaying) {
-                concertMusicAudio.play().then(() => {
-                    stopConcertSynthFallback();
-                }).catch(() => {
-                    startConcertSynthFallback(ACT_1.fallbackFreq);
-                });
-            }
-
-            startBeatSyncVisuals();
-        }
-
-        function startConcertOpeningSequence() {
+        document.getElementById('feYaEstoyListaBtn').onclick = () => {
             ensureAudioContext();
-            concertIntroVoice.pause();
-            if (feIntroSprite) feIntroSprite.classList.remove('talking');
-            feIntroScreen.classList.add('hidden');
-            feOpeningScreen.classList.remove('hidden');
+            document.getElementById('feUnlockScreen').classList.add('hidden');
+            document.getElementById('feOpeningScreen').classList.remove('hidden');
+            startExact5SecondCountdown();
+        };
 
-            let remaining = 10;
-            openingCountdown.textContent = remaining;
-            openingRevealTitle.classList.add('hidden');
-            openingCountdown.classList.remove('hidden');
-            openingStatus.textContent = 'FUTTTURA ARENA • MULTITUD EN PIE';
-            openingStageGlow.style.opacity = '0.15';
+        function startExact5SecondCountdown() {
+            clearInterval(countdownTimer);
+            clearInterval(concertFallbackTimer);
+            stopAllAudio();
 
-            crowdCheeringAudio.currentTime = 0;
-            crowdCheeringAudio.volume = concertVolume;
-            crowdCheeringAudio.play().catch(() => {
-                playTone(110, 0.8, 'sawtooth', 0.05, 0);
-            });
+            let sec = 5;
+            const numEl = document.getElementById('openingCountdown');
+            const statusEl = document.getElementById('openingStatus');
+            numEl.classList.remove('hidden');
+            numEl.textContent = sec;
+            statusEl.textContent = 'FUTTTURA ARENA • COUNTDOWN';
 
-            clearInterval(countdownInterval);
-            countdownInterval = setInterval(() => {
-                remaining--;
-                const progress = (10 - remaining) / 10;
-                openingStageGlow.style.opacity = String(0.15 + progress * 0.85);
-                openingStageGlow.style.filter = `brightness(${1 + progress * 0.7})`;
+            const cheer = document.getElementById('crowdCheeringAudio');
+            cheer.volume = concertVol;
+            cheer.currentTime = 0;
+            cheer.play().catch(() => {});
 
-                if (remaining > 0) {
-                    openingCountdown.textContent = remaining;
-                    playTone(220 + progress * 440, 0.14, 'triangle', 0.08, 0);
+            countdownTimer = setInterval(() => {
+                sec--;
+                if (sec > 0) {
+                    numEl.textContent = sec;
+                    playTone(260 + (5 - sec) * 90, 0.12, 'triangle', 0.08, 0);
                 } else {
-                    clearInterval(countdownInterval);
-                    openingCountdown.classList.add('hidden');
-                    openingStatus.textContent = 'FUTTTURA STAGE UNLOCKED';
-                    openingRevealTitle.classList.remove('hidden');
-                    playCorrectSound();
+                    clearInterval(countdownTimer);
+                    stopAllAudio();
+                    numEl.classList.add('hidden');
+                    statusEl.textContent = '...';
 
                     setTimeout(() => {
-                        feOpeningScreen.classList.add('hidden');
-                        feConcertScreen.classList.remove('hidden');
-                        isConcertPlaying = true;
-                        togglePlayPauseBtn.textContent = 'PAUSA';
-                        loadConcertAct1(true);
-                    }, 2200);
+                        document.getElementById('feOpeningScreen').classList.add('hidden');
+                        document.getElementById('feConcertScreen').classList.remove('hidden');
+                        isPlayingAct = true;
+                        document.getElementById('togglePlayPauseBtn').textContent = 'PAUSA';
+                        loadConcertAct(0);
+                    }, 1500);
                 }
             }, 1000);
         }
 
-        feStartOpeningBtn.addEventListener('click', startConcertOpeningSequence);
+        function loadConcertAct(idx) {
+            clearInterval(concertFallbackTimer);
+            stopAllAudio();
+            actIdx = idx;
+            const act = CONCERT_ACTS[idx];
 
-        togglePlayPauseBtn.addEventListener('click', () => {
-            ensureAudioContext();
-            if (isConcertPlaying) {
-                isConcertPlaying = false;
-                togglePlayPauseBtn.textContent = 'REPRODUCIR';
-                concertMusicAudio.pause();
-                actVideo.pause();
-                stopConcertSynthFallback();
-            } else {
-                isConcertPlaying = true;
-                togglePlayPauseBtn.textContent = 'PAUSA';
-                actVideo.play().catch(() => {});
-                concertMusicAudio.play().catch(() => {
-                    startConcertSynthFallback(ACT_1.fallbackFreq);
+            document.getElementById('concertShell').style.background = act.bg;
+            document.getElementById('actKicker').textContent = act.kicker;
+            document.getElementById('actTitle').textContent = act.title;
+            document.getElementById('actIntroText').textContent = act.intro;
+
+            const vEl = document.getElementById('actVideo');
+            const pEl = document.getElementById('actPhotoFallback');
+            pEl.src = act.photo;
+            vEl.src = act.video;
+            if (isPlayingAct) vEl.play().catch(() => {});
+
+            const mEl = document.getElementById('concertMusicAudio');
+            mEl.src = act.music;
+            mEl.volume = concertVol;
+            mEl.currentTime = 0;
+
+            mEl.onended = () => {
+                if (actIdx < CONCERT_ACTS.length - 1) {
+                    loadConcertAct(actIdx + 1);
+                } else {
+                    triggerFinalVIPScreen();
+                }
+            };
+
+            if (isPlayingAct) {
+                mEl.play().catch(() => {
+                    concertFallbackTimer = setInterval(() => {
+                        if (isPlayingAct) playTone(act.freq, 0.25, 'triangle', Math.max(0.01, concertVol * 0.04), 0);
+                    }, 600);
                 });
             }
-        });
-
-        fullscreenVideoBtn.addEventListener('click', () => {
-            screenFrame.classList.toggle('fullscreen-mode');
-            fullscreenVideoBtn.textContent = screenFrame.classList.contains('fullscreen-mode')
-                ? 'SALIR PANTALLA COMPLETA'
-                : 'PANTALLA COMPLETA';
-        });
-
-        concertVolumeRange.addEventListener('input', () => {
-            concertVolume = Number(concertVolumeRange.value);
-            concertVolumeLabel.textContent = `${Math.round(concertVolume * 100)}%`;
-            concertMusicAudio.volume = concertVolume;
-            crowdCheeringAudio.volume = concertVolume;
-            finalVideoPlayer.volume = concertVolume;
-        });
-
-        function triggerFinalMoment() {
-            isConcertPlaying = false;
-            stopConcertSynthFallback();
-            if (beatPulseInterval) clearInterval(beatPulseInterval);
-            screenFrame.classList.remove('fullscreen-mode');
-
-            const startVol = concertMusicAudio.volume;
-            let stepFade = 0;
-            const fadeOutTimer = setInterval(() => {
-                stepFade++;
-                concertMusicAudio.volume = Math.max(0, startVol * (1 - stepFade / 15));
-                if (stepFade >= 15) {
-                    clearInterval(fadeOutTimer);
-                    concertMusicAudio.pause();
-                    actVideo.pause();
-                }
-            }, 80);
-
-            feConcertScreen.classList.add('hidden');
-            feFinalScreen.classList.remove('hidden');
-            oneLastThingText.classList.remove('shown');
-            finalVideoWrap.classList.add('hidden');
-            vipTicketCard.classList.add('hidden');
-            personalMessageCard.classList.add('hidden');
-
-            setTimeout(() => {
-                oneLastThingText.classList.add('shown');
-            }, 600);
-
-            setTimeout(() => {
-                finalVideoWrap.classList.remove('hidden');
-                finalVideoPlayer.src = actVideo.getAttribute('src') || ACT_1.videoSrc;
-                finalVideoPlayer.volume = concertVolume;
-                finalVideoPlayer.currentTime = 0;
-                finalVideoPlayer.play().catch(() => {});
-            }, 1800);
-
-            setTimeout(() => {
-                vipTicketCard.classList.remove('hidden');
-            }, 2800);
-
-            setTimeout(() => {
-                personalMessageCard.classList.remove('hidden');
-            }, 4200);
         }
 
-        finishConcertBtn.addEventListener('click', triggerFinalMoment);
+        document.getElementById('togglePlayPauseBtn').onclick = () => {
+            const vEl = document.getElementById('actVideo');
+            const mEl = document.getElementById('concertMusicAudio');
+            if (isPlayingAct) {
+                isPlayingAct = false;
+                vEl.pause();
+                mEl.pause();
+                clearInterval(concertFallbackTimer);
+                document.getElementById('togglePlayPauseBtn').textContent = 'REPRODUCIR';
+            } else {
+                isPlayingAct = true;
+                vEl.play().catch(() => {});
+                mEl.play().catch(() => {});
+                document.getElementById('togglePlayPauseBtn').textContent = 'PAUSA';
+            }
+        };
+
+        document.getElementById('nextActBtn').onclick = () => {
+            if (actIdx < CONCERT_ACTS.length - 1) {
+                loadConcertAct(actIdx + 1);
+            } else {
+                triggerFinalVIPScreen();
+            }
+        };
+
+        document.getElementById('finishConcertBtn').onclick = triggerFinalVIPScreen;
+
+        document.getElementById('concertVolumeRange').oninput = (e) => {
+            concertVol = Number(e.target.value);
+            document.getElementById('concertVolumeLabel').textContent = `${Math.round(concertVol * 100)}%`;
+            document.getElementById('concertMusicAudio').volume = concertVol;
+            document.getElementById('crowdCheeringAudio').volume = concertVol;
+        };
+
+        function triggerFinalVIPScreen() {
+            clearInterval(concertFallbackTimer);
+            stopAllAudio();
+            document.getElementById('feConcertScreen').classList.add('hidden');
+            document.getElementById('feFinalScreen').classList.remove('hidden');
+            setTimeout(() => document.getElementById('oneLastThingText').classList.add('shown'), 400);
+        }
+
+        function stopAllAudio() {
+            document.querySelectorAll('audio').forEach(a => {
+                try { a.pause(); a.currentTime = 0; } catch (_) {}
+            });
+        }
+
+        function hideAllStages() {
+            stage1Ended = true;
+            clearTimeout(duckTimer);
+            clearInterval(memTimerId);
+            clearInterval(countdownTimer);
+            clearInterval(concertFallbackTimer);
+            document.querySelectorAll('section, #sceneWrapper, #postHoleGifLayer, #cleanTiniVoiceLayer, #bsChallengeModal')
+                .forEach(el => el.classList.add('hidden'));
+        }
 
         /* =========================================================
-           KEYBINDS RAPIDE:
-           - APASĂ "W" PENTRU A SĂRI DIRECT LA BACKSTAGE
-           - APASĂ "E" PENTRU A SĂRI DIRECT LA FINAL EXPERIENCE (INTRO TINI)
+           KEYBINDS OBLIGATORII:
+           - CTRL + ALT + 1 = Skip la Quest 1 + deblochează "909"
+           - CTRL + ALT + 2 = Skip la Quest 2 + deblochează "35-"
+           - CTRL + ALT + 3 = Skip la Quest 3 + deblochează "KRISS"
+           - CTRL + ALT + 4 = După finalizarea Quest 3 (deblochează "KRISS" + merge la codul final)
            ========================================================= */
+        const QUEST_KEYBINDS = {
+            '1': () => {
+                questCompleted.q1 = true;
+                refreshFragmentsHud();
+                playCorrectSound();
+                openQuest1();
+            },
+            '2': () => {
+                questCompleted.q2 = true;
+                refreshFragmentsHud();
+                playCorrectSound();
+                openQuest2('room');
+            },
+            '3': () => {
+                questCompleted.q3 = true;
+                refreshFragmentsHud();
+                playCorrectSound();
+                openQuest3();
+            },
+            '4': () => {
+                questCompleted.q3 = true;
+                refreshFragmentsHud();
+                playCorrectSound();
+                openTransmissionStage();
+            }
+        };
+
         window.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.altKey && QUEST_KEYBINDS[e.key]) {
+                e.preventDefault();
+                ensureAudioContext();
+                QUEST_KEYBINDS[e.key]();
+                return;
+            }
+
             if (e.repeat) return;
             const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
             if (tag === 'input' || tag === 'textarea') return;
 
             if (e.key && e.key.toLowerCase() === 'w') {
                 ensureAudioContext();
-                playCorrectSound();
-                openBackstageStage('intro');
+                openQuest2('intro');
             } else if (e.key && e.key.toLowerCase() === 'e') {
                 ensureAudioContext();
-                playCorrectSound();
-                openFinalConcertStage('intro');
+                openConcertStage('unlock');
             }
         });
     </script>
